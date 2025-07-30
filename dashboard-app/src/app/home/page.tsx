@@ -32,8 +32,13 @@ export default function LandingPage() {
           Is your river at risk of flooding?
         </h1>
         <p className="text-xl text-secondary-black mb-8">
-          Explore flood history and future risk for rivers in the Pacific Northwest
+          Explore flood history and future risk for rivers in the Pacific Northwest.
         </p>
+        
+        <h1 className="text-5xl font-bold text-supp-bright-brick mb-8">
+          THIS WEBSITE IS STILL UNDER DEVELOPMENT. INFORMATION MAY BE INACCURATE. 
+        </h1>
+
         <div className="max-w-md mx-auto mb-12">
           <div className="relative">
             <Search className="absolute left-3 top-4 h-5 w-5 text-secondary-gray" />
