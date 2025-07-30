@@ -59,8 +59,7 @@ export default function RiverDashboardPage() {
   });
   const [dataLoading, setDataLoading] = useState(true);
   const [dataError, setDataError] = useState<string | null>(null);
-  const [hoveredPoint, setHoveredPoint] = useState<{x: number, y: number, data: any, type: 'stage' | 'discharge'} | null>(null);
-  const [selectedTimeRange, setSelectedTimeRange] = useState<{start: string, end: string} | null>(null);
+  const [hoveredPoint, setHoveredPoint] = useState<{x: number, y: number, data: {dateTime: string, value: number, qualifiers?: string[]}, type: 'stage' | 'discharge'} | null>(null);
 
   // Fetch real USGS data - no fallbacks
   useEffect(() => {
@@ -97,14 +96,14 @@ export default function RiverDashboardPage() {
         const dischargeData = await dischargeResponse.json();
 
         // Process stage data with full datetime
-        const processedStage = stageData.value?.timeSeries?.[0]?.values?.[0]?.value?.map((point: any) => ({
+        const processedStage = stageData.value?.timeSeries?.[0]?.values?.[0]?.value?.map((point: {dateTime: string, value: string, qualifiers?: string[]}) => ({
           dateTime: point.dateTime,
           value: parseFloat(point.value),
           qualifiers: point.qualifiers || []
         })) || [];
 
         // Process discharge data with full datetime
-        const processedDischarge = dischargeData.value?.timeSeries?.[0]?.values?.[0]?.value?.map((point: any) => ({
+        const processedDischarge = dischargeData.value?.timeSeries?.[0]?.values?.[0]?.value?.map((point: {dateTime: string, value: string, qualifiers?: string[]}) => ({
           dateTime: point.dateTime,
           value: parseFloat(point.value),
           qualifiers: point.qualifiers || []
@@ -128,7 +127,7 @@ export default function RiverDashboardPage() {
     };
 
     fetchUSGSData();
-  }, [riverData.usgsId]);
+  }, []);
 
   // Helper functions for interactive chart
   const formatDateTime = (dateTime: string) => {
@@ -149,7 +148,7 @@ export default function RiverDashboardPage() {
     }
   };
 
-  const getChartDimensions = (data: any[], type: 'stage' | 'discharge') => {
+  const getChartDimensions = (data: {value: number}[]) => {
     if (data.length === 0) return { min: 0, max: 10, range: 10 };
     
     const values = data.map(d => d.value);
@@ -166,7 +165,7 @@ export default function RiverDashboardPage() {
     };
   };
 
-  const getPointPosition = (index: number, total: number, value: number, dimensions: any, chartHeight: number) => {
+  const getPointPosition = (index: number, total: number, value: number, dimensions: {min: number, max: number, range: number}, chartHeight: number) => {
     const x = (index / (total - 1)) * 400;
     const y = chartHeight - ((value - dimensions.min) / dimensions.range) * chartHeight;
     return { x, y };
@@ -440,7 +439,7 @@ export default function RiverDashboardPage() {
                                     
                                     {/* Calculate dimensions */}
                                     {(() => {
-                                      const dimensions = getChartDimensions(timeSeriesData.stage, 'stage');
+                                      const dimensions = getChartDimensions(timeSeriesData.stage);
                                       const chartWidth = 520;
                                       const chartHeight = 360;
                                       
@@ -583,7 +582,7 @@ export default function RiverDashboardPage() {
                                     
                                     {/* Calculate dimensions */}
                                     {(() => {
-                                      const dimensions = getChartDimensions(timeSeriesData.discharge, 'discharge');
+                                      const dimensions = getChartDimensions(timeSeriesData.discharge);
                                       const chartWidth = 520;
                                       const chartHeight = 360;
                                       
