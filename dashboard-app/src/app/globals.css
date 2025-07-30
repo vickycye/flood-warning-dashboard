@@ -1,23 +1,98 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Base colors */
+  --background: #39275b;
+  --foreground: #ffffff;
+  
+  /* Primary brand colors */
+  --logo-purple: #39275b;
+  --primary-purple: #39275b;
+  
+  /* Secondary colors */
+  --secondary-gold: #c79900;
+  --secondary-black: #000000;
+  --secondary-gray: #939598;
+  --secondary-white: #ffffff;
+  
+  /* Accent colors */
+  --secondary-headlines: #8e632a;
+  --supp-bright-gold: #ebb700;
+  --supp-bright-green: #5b8f22;
+  --supp-bright-blue: #0046ad;
+  --supp-bright-skyblue: #63b1e5;
+  --supp-bright-cream: #ede8c4;
+  --supp-bright-brick: #c75b12;
+
+  --supp-muted-gold: #c79900;
+  --supp-muted-green: #898f4b;
+  --supp-muted-blue: #165788;
+  --supp-muted-skyblue: #93b1cc;
+  --supp-muted-cream: #dbceac;
+  --supp-muted-brick: #bd4f19;
+  
+  /* Warning colors */
+
+  
+  /* Error colors */
+
+  
+  /* Success colors */
+
+  
+  /* Background colors */
+  --background-purple: #39275b;
+  --background-lightpurple: #dfdde8;
+  --background-gold: #e3bf42;
+  --background-cream: #d7c896;
 }
 
 @theme inline {
+  /* Base colors */
   --color-background: var(--background);
   --color-foreground: var(--foreground);
+  
+  /* Primary color palette */
+  --color-logo-purple: var(--logo-purple);
+  --color-primary-purple: var(--primary-purple);
+  
+  /* Secondary color palette */
+  --color-secondary-gold: var(--secondary-gold);
+  --color-secondary-black: var(--secondary-black);
+  --color-secondary-gray: var(--secondary-gray);
+  --color-secondary-white: var(--secondary-white);
+  
+  /* Accent color palette */
+  --color-secondary-headlines: var(--secondary-headlines);
+  --color-supp-bright-gold: var(--supp-bright-gold);
+  --color-supp-bright-green: var(--supp-bright-green);
+  --color-supp-bright-blue: var(--supp-bright-blue);
+  --color-supp-bright-skyblue: var(--supp-bright-skyblue);
+  --color-supp-bright-cream: var(--supp-bright-cream);
+  --color-supp-bright-brick: var(--supp-bright-brick);
+  
+  /* Muted accent colors */
+  --color-supp-muted-gold: var(--supp-muted-gold);
+  --color-supp-muted-green: var(--supp-muted-green);
+  --color-supp-muted-blue: var(--supp-muted-blue);
+  --color-supp-muted-skyblue: var(--supp-muted-skyblue);
+  --color-supp-muted-cream: var(--supp-muted-cream);
+  --color-supp-muted-brick: var(--supp-muted-brick);
+  
+  /* Background colors */
+  --color-background-purple: var(--background-purple);
+  --color-background-lightpurple: var(--background-lightpurple);
+  --color-background-gold: var(--background-gold);
+  --color-background-cream: var(--background-cream);
+  
+  /* Fonts */
   --font-sans: var(--font-geist-sans);
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
+/* @media (prefers-color-scheme: dark) {
+
+} */
 
 body {
   background: var(--background);
