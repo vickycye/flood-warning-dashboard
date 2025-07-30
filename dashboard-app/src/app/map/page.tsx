@@ -248,7 +248,7 @@ export default function MapViewPage() {
               <div className="text-center">
                 <MapPin className="h-12 w-12 text-primary-purple mx-auto mb-4" />
                 <p className="text-secondary-black mb-6">
-                  To show you the most relevant river data, we'd like to know your approximate location.
+                  To show you the most relevant river data, we&apos;d like to know your approximate location.
                 </p>
                 <div className="space-y-3">
                   <button

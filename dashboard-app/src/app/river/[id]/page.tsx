@@ -33,21 +33,23 @@ export default function RiverDashboardPage() {
   const [expertMode, setExpertMode] = useState(false);
 
   return (
-    <div className="min-h-screen bg-purple-50">
-      <div className="bg-white border-b-2 border-purple-200 shadow-sm">
+    <div className="min-h-screen bg-background-lightpurple">
+      <div className="bg-secondary-white border-b-2 border-secondary-gold shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between mb-4">
             <button
               onClick={() => window.location.assign("/")}
-              className="text-purple-600 hover:text-purple-800 flex items-center"
+              className="text-primary-purple hover:text-supp-bright-brick flex items-center transition-colors"
             >
               ← Back to Search
             </button>
             <div className="flex items-center space-x-2">
               <button
                 onClick={() => setExpertMode(!expertMode)}
-                className={`flex items-center px-3 py-1 text-sm border-2 ${
-                  expertMode ? "bg-purple-100 text-purple-800 border-purple-300" : "bg-gray-100 text-gray-600 border-gray-300"
+                className={`flex items-center px-3 py-1 text-sm border-2 rounded transition-colors ${
+                  expertMode 
+                    ? "bg-supp-bright-cream text-primary-purple border-secondary-gold" 
+                    : "bg-secondary-gray text-secondary-white border-secondary-gray"
                 }`}
               >
                 {expertMode ? <Eye className="h-4 w-4 mr-1" /> : <EyeOff className="h-4 w-4 mr-1" />}
@@ -57,37 +59,37 @@ export default function RiverDashboardPage() {
           </div>
           <div className="flex items-start justify-between">
             <div>
-              <h1 className="text-3xl font-bold text-purple-900">{riverData.name}</h1>
-              <div className="flex items-center space-x-4 mt-2 text-purple-700">
+              <h1 className="text-3xl font-bold text-primary-purple">{riverData.name}</h1>
+              <div className="flex items-center space-x-4 mt-2 text-secondary-black">
                 <span className="flex items-center">
-                  <MapPin className="h-4 w-4 mr-1" />
+                  <MapPin className="h-4 w-4 mr-1 text-supp-bright-brick" />
                   {riverData.location}
                 </span>
                 {expertMode && (
-                  <span className="text-sm">USGS ID: {riverData.usgsId}</span>
+                  <span className="text-sm text-secondary-gray">USGS ID: {riverData.usgsId}</span>
                 )}
               </div>
             </div>
-            <div className="bg-purple-100 border-2 border-purple-200 p-3 w-32 h-24">
-              <div className="text-xs text-purple-600 mb-1">Mini Map</div>
-              <div className="bg-purple-200 w-full h-full flex items-center justify-center">
-                <MapPin className="h-6 w-6 text-purple-600" />
+            <div className="bg-supp-bright-cream border-2 border-secondary-gold p-3 w-32 h-24 rounded">
+              <div className="text-xs text-primary-purple mb-1">Mini Map</div>
+              <div className="bg-background-lightpurple w-full h-full flex items-center justify-center rounded">
+                <MapPin className="h-6 w-6 text-primary-purple" />
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="bg-white border-b-2 border-purple-200">
+      <div className="bg-secondary-white border-b-2 border-secondary-gold">
         <div className="max-w-6xl mx-auto px-4">
           <nav className="flex space-x-8">
             {TABS.map((tab) => (
               <button
                 key={tab.id}
                 onClick={() => setActiveTab(tab.id)}
-                className={`flex items-center px-3 py-4 border-b-2 font-medium text-sm ${
+                className={`flex items-center px-3 py-4 border-b-2 font-medium text-sm transition-colors ${
                   activeTab === tab.id
-                    ? "border-purple-500 text-purple-600"
-                    : "border-transparent text-purple-500 hover:text-purple-700"
+                    ? "border-secondary-gold text-primary-purple"
+                    : "border-transparent text-secondary-gray hover:text-primary-purple"
                 }`}
               >
                 <tab.icon className="h-4 w-4 mr-2" />
@@ -100,38 +102,38 @@ export default function RiverDashboardPage() {
       <div className="max-w-6xl mx-auto px-4 py-8">
         {activeTab === "history" && (
           <div className="space-y-8">
-            <div className="bg-white border-2 border-purple-200 shadow-sm p-6">
-              <h2 className="text-xl font-semibold mb-4 text-purple-900">Historical Flood Summary</h2>
+            <div className="bg-secondary-white border-2 border-secondary-gold shadow-sm p-6 rounded-lg">
+              <h2 className="text-xl font-semibold mb-4 text-primary-purple">Historical Flood Summary</h2>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                <div className="text-center p-4 bg-purple-50 border-2 border-purple-200">
-                  <div className="text-2xl font-bold text-purple-900">{riverData.floodHistory.totalEvents}</div>
-                  <div className="text-sm text-purple-700">Total Floods Since 1990</div>
+                <div className="text-center p-4 bg-background-lightpurple border-2 border-secondary-gold rounded">
+                  <div className="text-2xl font-bold text-primary-purple">{riverData.floodHistory.totalEvents}</div>
+                  <div className="text-sm text-secondary-black">Total Floods Since 1990</div>
                 </div>
-                <div className="text-center p-4 bg-red-50 border-2 border-red-200">
-                  <div className="text-2xl font-bold text-red-600">{riverData.floodHistory.majorEvents}</div>
-                  <div className="text-sm text-red-700">Major Floods</div>
+                <div className="text-center p-4 bg-supp-bright-brick bg-opacity-10 border-2 border-supp-bright-brick rounded">
+                  <div className="text-2xl font-bold text-supp-bright-brick">{riverData.floodHistory.majorEvents}</div>
+                  <div className="text-sm text-supp-bright-brick">Major Floods</div>
                 </div>
-                <div className="text-center p-4 bg-yellow-50 border-2 border-yellow-200">
-                  <div className="text-2xl font-bold text-yellow-600">{riverData.floodHistory.moderateEvents}</div>
-                  <div className="text-sm text-yellow-700">Moderate Floods</div>
+                <div className="text-center p-4 bg-supp-bright-gold bg-opacity-10 border-2 border-supp-bright-gold rounded">
+                  <div className="text-2xl font-bold text-supp-bright-gold">{riverData.floodHistory.moderateEvents}</div>
+                  <div className="text-sm text-supp-bright-gold">Moderate Floods</div>
                 </div>
-                <div className="text-center p-4 bg-green-50 border-2 border-green-200">
-                  <div className="text-2xl font-bold text-green-600">{riverData.floodHistory.minorEvents}</div>
-                  <div className="text-sm text-green-700">Minor Floods</div>
+                <div className="text-center p-4 bg-supp-bright-green bg-opacity-10 border-2 border-supp-bright-green rounded">
+                  <div className="text-2xl font-bold text-supp-bright-green">{riverData.floodHistory.minorEvents}</div>
+                  <div className="text-sm text-supp-bright-green">Minor Floods</div>
                 </div>
               </div>
-              <div className="bg-purple-100 border-2 border-purple-200 p-4 h-48 flex items-center justify-center">
-                <BarChart3 className="h-8 w-8 text-purple-400 mr-2" />
-                <span className="text-purple-600">Interactive flood frequency chart would appear here</span>
+              <div className="bg-supp-bright-cream border-2 border-secondary-gold p-4 h-48 flex items-center justify-center rounded">
+                <BarChart3 className="h-8 w-8 text-primary-purple mr-2" />
+                <span className="text-primary-purple">Interactive flood frequency chart would appear here</span>
               </div>
             </div>
-            <div className="bg-white border-2 border-purple-200 shadow-sm p-6">
-              <h3 className="text-lg font-semibold mb-4 text-purple-900">Recent Major Flood Events</h3>
+            <div className="bg-secondary-white border-2 border-secondary-gold shadow-sm p-6 rounded-lg">
+              <h3 className="text-lg font-semibold mb-4 text-primary-purple">Recent Major Flood Events</h3>
               <div className="space-y-3">
                 {riverData.floodHistory.recentYears.map((year) => (
-                  <div key={year} className="flex items-center justify-between p-3 bg-purple-50 border-2 border-purple-200">
-                    <span className="font-medium text-purple-900">{year} Flood Event</span>
-                    <span className="text-sm text-purple-700">Peak: 15.2 ft • Duration: 3 days</span>
+                  <div key={year} className="flex items-center justify-between p-3 bg-background-lightpurple border-2 border-secondary-gold rounded hover:bg-supp-bright-cream transition-colors">
+                    <span className="font-medium text-primary-purple">{year} Flood Event</span>
+                    <span className="text-sm text-secondary-black">Peak: 15.2 ft • Duration: 3 days</span>
                   </div>
                 ))}
               </div>
