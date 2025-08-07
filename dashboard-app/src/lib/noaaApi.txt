@@ -1,0 +1,57 @@
+// lib/noaaApi.ts - NOAA forecast service functions
+
+import { NOAAForecast } from './mapTypes';
+
+/**
+ * Fetches NOAA flood forecast for a USGS site
+ * Note: NOAA API endpoints may require specific formatting or keys
+ * @param usgsId - USGS site identifier
+ * @returns Promise<NOAAForecast | null>
+ */
+export const fetchNOAAFloodForecast = async (usgsId: string): Promise<NOAAForecast | null> => {
+  try {
+    // NOAA Advanced Hydrologic Prediction Service (AHPS)
+    // This endpoint provides flood forecasts for USGS sites
+    const response = await fetch(
+      `https://water.weather.gov/ahps2/hydrograph_to_xml.php?gage=${usgsId}&output=xml`
+    );
+
+    if (!response.ok) {
+      console.warn(`NOAA forecast not available for site ${usgsId}`);
+      return null;
+    }
+
+    const xmlText = await response.text();
+    
+    // Parse XML response (simplified - in production you'd use a proper XML parser)
+    const parser = new DOMParser();
+    const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+    
+    // Extract forecast data from XML
+    const forecastElements = xmlDoc.getElementsByTagName('forecast');
+    const forecast = [];
+    
+    for (let i = 0; i < Math.min(forecastElements.length, 7); i++) { // Next 7 days
+      const element = forecastElements[i];
+      const dateElement = element.getElementsByTagName('valid')[0];
+      const stageElement = element.getElementsByTagName('primary')[0];
+      
+      if (dateElement && stageElement) {
+        const date = dateElement.textContent || '';
+        const stage = parseFloat(stageElement.textContent || '0');
+        
+        // Determine risk level (you'd use actual thresholds here)
+        let riskLevel: 'low' | 'moderate' | 'high' = 'low';
+        if (stage > 15) riskLevel = 'high';
+        else if (stage > 10) riskLevel = 'moderate';
+        
+        forecast.push({ date, stage, riskLevel });
+      }
+    }
+
+    return { site: usgsId, forecast };
+  } catch (error) {
+    console.error(`Error fetching NOAA forecast for ${usgsId}:`, error);
+    return null;
+  }
+};

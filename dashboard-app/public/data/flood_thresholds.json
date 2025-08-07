@@ -1,0 +1,2407 @@
+[
+  {
+    "id": 12010000,
+    "usgsId": 12010000,
+    "name": "Naselle River near Naselle",
+    "latitude": 46.3739937,
+    "longitude": -123.743482,
+    "floodThresholds": {
+      "minor": 15.0,
+      "moderate": 16.0,
+      "major": 17.0,
+      "action": 14.0
+    }
+  },
+  {
+    "id": 12013500,
+    "usgsId": 12013500,
+    "name": "Willapa River at Willapa",
+    "latitude": 46.651111111111,
+    "longitude": -123.65166666667,
+    "floodThresholds": {
+      "minor": 21.0,
+      "moderate": 22.0,
+      "major": 24.0,
+      "action": 20.0
+    }
+  },
+  {
+    "id": 12020000,
+    "usgsId": 12020000,
+    "name": "Chehalis River near Doty",
+    "latitude": 46.6173236,
+    "longitude": -123.277644,
+    "floodThresholds": {
+      "minor": 318.0,
+      "moderate": 323.5,
+      "major": 324.5,
+      "action": 315.5
+    }
+  },
+  {
+    "id": 12020525,
+    "usgsId": 12020525,
+    "name": "Elk Creek (WA) near Doty",
+    "latitude": 46.634722222222,
+    "longitude": -123.29555555556,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12020800,
+    "usgsId": 12020800,
+    "name": "South Fork Chehalis Rver near Wildwood",
+    "latitude": 46.44482815,
+    "longitude": -123.0837376,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12021800,
+    "usgsId": 12021800,
+    "name": "Chehalis River near Adna",
+    "latitude": 46.6258333333333,
+    "longitude": -123.100555555556,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12024000,
+    "usgsId": 12024000,
+    "name": "South Fork Newaukum River near Onalaska",
+    "latitude": 46.575833333333,
+    "longitude": -122.68388888889,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12024400,
+    "usgsId": 12024400,
+    "name": "North Fork Newaukum River near Forest",
+    "latitude": 46.66732635,
+    "longitude": -122.7701209,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12025000,
+    "usgsId": 12025000,
+    "name": "Newaukum River near Chehalis",
+    "latitude": 46.620277777778,
+    "longitude": -122.94388888889,
+    "floodThresholds": {
+      "minor": 202.5,
+      "moderate": 204.5,
+      "major": 205.5,
+      "action": 200.5
+    }
+  },
+  {
+    "id": 12025100,
+    "usgsId": 12025100,
+    "name": "Chehalis River at WWTP at Chehalis",
+    "latitude": 46.6611111111111,
+    "longitude": -122.982777777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12025700,
+    "usgsId": 12025700,
+    "name": "Skookumchuck River near Vail",
+    "latitude": 46.772778,
+    "longitude": -122.592781,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12026150,
+    "usgsId": 12026150,
+    "name": "Skookumchuck River Below Bloody Run",
+    "latitude": 46.790277777778,
+    "longitude": -122.73416666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12026400,
+    "usgsId": 12026400,
+    "name": "Skookumchuck River near Bucoda",
+    "latitude": 46.7720459,
+    "longitude": -122.924298,
+    "floodThresholds": {
+      "minor": 211.5,
+      "moderate": 213.0,
+      "major": 215.0,
+      "action": 209.5
+    }
+  },
+  {
+    "id": 12027500,
+    "usgsId": 12027500,
+    "name": "Chehalis River near Grand Mound",
+    "latitude": 46.7759343,
+    "longitude": -123.0356919,
+    "floodThresholds": {
+      "minor": 141.0,
+      "moderate": 142.5,
+      "major": 144.0,
+      "action": 138.5
+    }
+  },
+  {
+    "id": 12028060,
+    "usgsId": 12028060,
+    "name": "Chehalis River at Rochester",
+    "latitude": 46.806944444444,
+    "longitude": -123.11888888,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12031000,
+    "usgsId": 12031000,
+    "name": "Chehalis River at Porter",
+    "latitude": 46.93926375,
+    "longitude": -123.3143194,
+    "floodThresholds": {
+      "minor": 48.0,
+      "moderate": 50.0,
+      "major": 52.0,
+      "action": 45.5
+    }
+  },
+  {
+    "id": 12035000,
+    "usgsId": 12035000,
+    "name": "Satsop River near Satsop",
+    "latitude": 47.000833333333,
+    "longitude": -123.49361111111,
+    "floodThresholds": {
+      "minor": 38.0,
+      "moderate": 40.0,
+      "major": 42.0,
+      "action": 36.0
+    }
+  },
+  {
+    "id": 12035100,
+    "usgsId": 12035100,
+    "name": "Chehalis River at Montesano",
+    "latitude": 46.9625,
+    "longitude": -123.603333333333,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12037400,
+    "usgsId": 12037400,
+    "name": "Wynoochee River near Montesano",
+    "latitude": 47.011666666667,
+    "longitude": -123.65416666667,
+    "floodThresholds": {
+      "minor": 42.5,
+      "moderate": 43.5,
+      "major": 44.5,
+      "action": 39.0
+    }
+  },
+  {
+    "id": 12039005,
+    "usgsId": 12039005,
+    "name": "Humptulips River below Blo Hwy 101 NR Humptulips",
+    "latitude": 47.2316666666667,
+    "longitude": -123.972777777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12039500,
+    "usgsId": 12039500,
+    "name": "Quinault River at Quinault Lake",
+    "latitude": 47.457777777778,
+    "longitude": -123.88805555556,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12040500,
+    "usgsId": 12040500,
+    "name": "Queets R near Clearwater",
+    "latitude": 47.538055555556,
+    "longitude": -124.31444444444,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12041200,
+    "usgsId": 12041200,
+    "name": "Hoh River near Forks",
+    "latitude": 47.806944444444,
+    "longitude": -124.24972222222,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12042800,
+    "usgsId": 12042800,
+    "name": "Bogachiel River near Forks",
+    "latitude": 47.8941666666667,
+    "longitude": -124.356944444444,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12043000,
+    "usgsId": 12043000,
+    "name": "Calawah River near Forks",
+    "latitude": 47.96007697,
+    "longitude": -124.3929872,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 14.6
+    }
+  },
+  {
+    "id": 12043015,
+    "usgsId": 12043015,
+    "name": "Bogachiel River near La Push",
+    "latitude": 47.903055555556,
+    "longitude": -124.54472222222,
+    "floodThresholds": {
+      "minor": 37.0,
+      "moderate": -9999.0,
+      "major": 41.0,
+      "action": 35.0
+    }
+  },
+  {
+    "id": 12045500,
+    "usgsId": 12045500,
+    "name": "Elwha River at Elwha R",
+    "latitude": 48.055,
+    "longitude": -123.58194444444,
+    "floodThresholds": {
+      "minor": 20.0,
+      "moderate": 21.5,
+      "major": 23.0,
+      "action": 17.3
+    }
+  },
+  {
+    "id": 12048000,
+    "usgsId": 12048000,
+    "name": "Dungeness River near Sequim",
+    "latitude": 48.014444444444,
+    "longitude": -123.13138888889,
+    "floodThresholds": {
+      "minor": 7.0,
+      "moderate": 7.5,
+      "major": 8.0,
+      "action": 5.9
+    }
+  },
+  {
+    "id": 12052210,
+    "usgsId": 12052210,
+    "name": "Big Quilcene River near Quilcene",
+    "latitude": 47.78453566,
+    "longitude": -122.97961,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12054000,
+    "usgsId": 12054000,
+    "name": "Duckabush River near Brinnon",
+    "latitude": 47.684166666667,
+    "longitude": -123.01027777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 5.5
+    }
+  },
+  {
+    "id": 12056500,
+    "usgsId": 12056500,
+    "name": "North Fork Skokomish River near Hoodsport",
+    "latitude": 47.5144444444444,
+    "longitude": -123.328611111111,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12059500,
+    "usgsId": 12059500,
+    "name": "North Fork Skokomish River near Potlatch",
+    "latitude": 47.32981429,
+    "longitude": -123.2432128,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12060500,
+    "usgsId": 12060500,
+    "name": "South Fork Skokomish River near Union",
+    "latitude": 47.340555555556,
+    "longitude": -123.27888888889,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12061250,
+    "usgsId": 12061250,
+    "name": "Vance Creek near Potlatch",
+    "latitude": 47.3225,
+    "longitude": -123.286111111111,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12061500,
+    "usgsId": 12061500,
+    "name": "Skokomish River near Potlatch",
+    "latitude": 47.31,
+    "longitude": -123.17583333333,
+    "floodThresholds": {
+      "minor": 16.5,
+      "moderate": 17.5,
+      "major": 18.0,
+      "action": 15.0
+    }
+  },
+  {
+    "id": 12079000,
+    "usgsId": 12079000,
+    "name": "Deschutes River near Rainier",
+    "latitude": 46.852222222222,
+    "longitude": -122.6675,
+    "floodThresholds": {
+      "minor": 11.0,
+      "moderate": 13.5,
+      "major": 15.0,
+      "action": 9.0
+    }
+  },
+  {
+    "id": 12082500,
+    "usgsId": 12082500,
+    "name": "Nisqually River near National",
+    "latitude": 46.752777777778,
+    "longitude": -122.0825,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12089500,
+    "usgsId": 12089500,
+    "name": "Nisqually River at McKenna",
+    "latitude": 46.933611111111,
+    "longitude": -122.55972222222,
+    "floodThresholds": {
+      "minor": 10.0,
+      "moderate": 13.0,
+      "major": 14.0,
+      "action": 8.0
+    }
+  },
+  {
+    "id": 12093500,
+    "usgsId": 12093500,
+    "name": "Puyallup River near Orting",
+    "latitude": 47.039444444444,
+    "longitude": -122.20666666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12094000,
+    "usgsId": 12094000,
+    "name": "Carbon River near Fairfax",
+    "latitude": 47.028055555556,
+    "longitude": -122.03138888889,
+    "floodThresholds": {
+      "minor": 13.5,
+      "moderate": 14.5,
+      "major": 15.0,
+      "action": 11.6
+    }
+  },
+  {
+    "id": 12095000,
+    "usgsId": 12095000,
+    "name": "South Prairie Creek at South Prairie",
+    "latitude": 47.139722222222,
+    "longitude": -122.09138888889,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12097850,
+    "usgsId": 12097850,
+    "name": "White River below Clearwater River",
+    "latitude": 47.146944444444,
+    "longitude": -121.85861111111,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12098500,
+    "usgsId": 12098500,
+    "name": "White River below Mud Mountain Dam",
+    "latitude": 47.151388888889,
+    "longitude": -121.94861111111,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12099200,
+    "usgsId": 12099200,
+    "name": "White River above Boise Ck",
+    "latitude": 47.173888888889,
+    "longitude": -122.00805555556,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12100490,
+    "usgsId": 12100490,
+    "name": "White River at R St. Auburn",
+    "latitude": 47.27482295,
+    "longitude": -122.2078967,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12100494,
+    "usgsId": 12100494,
+    "name": "White River at Roegner Pk. nr Auburn",
+    "latitude": 47.271388,
+    "longitude": -122.21888,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12100496,
+    "usgsId": 12100496,
+    "name": "White River near Auburn",
+    "latitude": 47.266109,
+    "longitude": -122.228615,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12100498,
+    "usgsId": 12100498,
+    "name": "White River at Pacific",
+    "latitude": 47.260277,
+    "longitude": -122.23722,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12100500,
+    "usgsId": 12100500,
+    "name": "White River near Sumner",
+    "latitude": 47.250277,
+    "longitude": -122.2422,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12101102,
+    "usgsId": 12101102,
+    "name": "White River near Dieringer",
+    "latitude": 47.2355555555556,
+    "longitude": -122.23611111111,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12101500,
+    "usgsId": 12101500,
+    "name": "Puyallup River at Puyallup",
+    "latitude": 47.208611111111,
+    "longitude": -122.32583333333,
+    "floodThresholds": {
+      "minor": 26.2,
+      "moderate": 30.0,
+      "major": 31.0,
+      "action": 24.0
+    }
+  },
+  {
+    "id": 12105800,
+    "usgsId": 12105800,
+    "name": "Green River (WA) at Howard Hanson Reservoir",
+    "latitude": 47.2770478,
+    "longitude": -121.7853845,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12105900,
+    "usgsId": 12105900,
+    "name": "Green River (WA) below Howard Hanson Dam",
+    "latitude": 47.283888888889,
+    "longitude": -121.79666666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12106700,
+    "usgsId": 12106700,
+    "name": "Green River (WA) at Purification Plant",
+    "latitude": 47.305279,
+    "longitude": -121.849442,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12108500,
+    "usgsId": 12108500,
+    "name": "Newaukum Creek near Black Diamond",
+    "latitude": 47.275833333333,
+    "longitude": -122.05833333333,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12112600,
+    "usgsId": 12112600,
+    "name": "Big Soos Creek near Auburn",
+    "latitude": 47.3125,
+    "longitude": -122.16416666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12113000,
+    "usgsId": 12113000,
+    "name": "Green River (WA) near Auburn",
+    "latitude": 47.3125,
+    "longitude": -122.20277777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12113344,
+    "usgsId": 12113344,
+    "name": "Green River (WA) at Kent",
+    "latitude": 47.423055555556,
+    "longitude": -122.2642,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12113350,
+    "usgsId": 12113350,
+    "name": "Green River (WA) at Tukwila",
+    "latitude": 47.4652777777778,
+    "longitude": -122.247222222222,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12113390,
+    "usgsId": 12113390,
+    "name": "Duwamish River at Tukwila",
+    "latitude": 47.4789861,
+    "longitude": -122.2587333,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12113415,
+    "usgsId": 12113415,
+    "name": "Duwamish River at Duwamish",
+    "latitude": 47.50050556,
+    "longitude": -122.2881417,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12115900,
+    "usgsId": 12115900,
+    "name": "Cedar River (WA) at Chester Morse Lk at Cedar Falls",
+    "latitude": 47.4092706,
+    "longitude": -121.7239955,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12117500,
+    "usgsId": 12117500,
+    "name": "Cedar River (WA) near Landsburg",
+    "latitude": 47.393888888889,
+    "longitude": -121.95333333333,
+    "floodThresholds": {
+      "minor": 5.7,
+      "moderate": 6.5,
+      "major": 7.5,
+      "action": 3.5
+    }
+  },
+  {
+    "id": 12119000,
+    "usgsId": 12119000,
+    "name": "Cedar River (WA) at Renton",
+    "latitude": 47.482777777778,
+    "longitude": -122.20222222222,
+    "floodThresholds": {
+      "minor": 13.0,
+      "moderate": 14.5,
+      "major": 16.0,
+      "action": 10.4
+    }
+  },
+  {
+    "id": 12120600,
+    "usgsId": 12120600,
+    "name": "Issaquah Creek near Hobart",
+    "latitude": 47.4575,
+    "longitude": -122.00388888889,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12121600,
+    "usgsId": 12121600,
+    "name": "Issaquah Creek near Issaquah",
+    "latitude": 47.5525,
+    "longitude": -122.04666666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12131500,
+    "usgsId": 12131500,
+    "name": "South Fork Skykomish River at Skykomish",
+    "latitude": 47.71104167,
+    "longitude": -121.3607333,
+    "floodThresholds": {
+      "minor": 27.5,
+      "moderate": 29.0,
+      "major": 30.0,
+      "action": 26.0
+    }
+  },
+  {
+    "id": 12134500,
+    "usgsId": 12134500,
+    "name": "Skykomish River near Gold Bar",
+    "latitude": 47.8373546,
+    "longitude": -121.6667809,
+    "floodThresholds": {
+      "minor": 15.0,
+      "moderate": 17.0,
+      "major": 19.0,
+      "action": 12.2
+    }
+  },
+  {
+    "id": 12137290,
+    "usgsId": 12137290,
+    "name": "South Fork Sultan River near Sultan",
+    "latitude": 47.9475,
+    "longitude": -121.625555555556,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12138160,
+    "usgsId": 12138160,
+    "name": "Sultan River near Sultan",
+    "latitude": 47.9075,
+    "longitude": -121.814166666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12141300,
+    "usgsId": 12141300,
+    "name": "Middle Fork Snoqualmie River near Tanner",
+    "latitude": 47.486111111111,
+    "longitude": -121.64666666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12142000,
+    "usgsId": 12142000,
+    "name": "North Fork Snoqualmie River near Snoqualmie Falls",
+    "latitude": 47.615,
+    "longitude": -121.71222222222,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12143400,
+    "usgsId": 12143400,
+    "name": "South Fork Snoqualmie River near South Fork Snoqualmie R near Garcia",
+    "latitude": 47.4151086,
+    "longitude": -121.5873213,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12144500,
+    "usgsId": 12144500,
+    "name": "Snoqualmie River at Snoqualmie Falls",
+    "latitude": 47.5450119,
+    "longitude": -121.842336,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12147900,
+    "usgsId": 12147900,
+    "name": "South Fork Tolt above S Fk Tolt Reservoir",
+    "latitude": 47.6937142,
+    "longitude": -121.689,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12148500,
+    "usgsId": 12148500,
+    "name": "Tolt River near Carnation",
+    "latitude": 47.695833333333,
+    "longitude": -121.82277777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12149000,
+    "usgsId": 12149000,
+    "name": "Snoqualmie River near Carnation",
+    "latitude": 47.666111111111,
+    "longitude": -121.92416666667,
+    "floodThresholds": {
+      "minor": 54.0,
+      "moderate": 56.0,
+      "major": 58.0,
+      "action": 50.7
+    }
+  },
+  {
+    "id": 12150800,
+    "usgsId": 12150800,
+    "name": "Snohomish River near Monroe",
+    "latitude": 47.831111111111,
+    "longitude": -122.04722222222,
+    "floodThresholds": {
+      "minor": 15.0,
+      "moderate": 16.0,
+      "major": 17.0,
+      "action": 10.0
+    }
+  },
+  {
+    "id": 12155300,
+    "usgsId": 12155300,
+    "name": "Pilchuck River near Snohomish",
+    "latitude": 47.935,
+    "longitude": -122.07194444444,
+    "floodThresholds": {
+      "minor": 18.0,
+      "moderate": 20.0,
+      "major": 22.0,
+      "action": 16.0
+    }
+  },
+  {
+    "id": 12155500,
+    "usgsId": 12155500,
+    "name": "Snohomish River at Snohomish",
+    "latitude": 47.9127333,
+    "longitude": -122.1064583,
+    "floodThresholds": {
+      "minor": 25.0,
+      "moderate": 27.0,
+      "major": 29.0,
+      "action": 20.0
+    }
+  },
+  {
+    "id": 12161000,
+    "usgsId": 12161000,
+    "name": "South Fork Stillaguamish River near Granite Falls",
+    "latitude": 48.103888888889,
+    "longitude": -121.94444444444,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 12.9
+    }
+  },
+  {
+    "id": 12167000,
+    "usgsId": 12167000,
+    "name": "North Fork Stillaguamish River near Arlington",
+    "latitude": 48.261666666667,
+    "longitude": -122.04638888889,
+    "floodThresholds": {
+      "minor": 13.0,
+      "moderate": 14.0,
+      "major": 15.0,
+      "action": 10.7
+    }
+  },
+  {
+    "id": 12170300,
+    "usgsId": 12170300,
+    "name": "Stillaguamish River near Stanwood",
+    "latitude": 48.2114,
+    "longitude": -122.3361,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12175000,
+    "usgsId": 12175000,
+    "name": "Skagit River  Ross Reservoir",
+    "latitude": 48.7327777777778,
+    "longitude": -121.067222222222,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12175500,
+    "usgsId": 12175500,
+    "name": "Thunder Creek near Newhalem",
+    "latitude": 48.672777777778,
+    "longitude": -121.07166666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12177510,
+    "usgsId": 12177510,
+    "name": "Stetattle Creek at Diablo",
+    "latitude": 48.7171333,
+    "longitude": -121.1499389,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12178000,
+    "usgsId": 12178000,
+    "name": "Skagit River at Newhalem",
+    "latitude": 48.671944,
+    "longitude": -121.246666,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12181000,
+    "usgsId": 12181000,
+    "name": "Skagit River at Marblemount",
+    "latitude": 48.533888888889,
+    "longitude": -121.42861111111,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12186000,
+    "usgsId": 12186000,
+    "name": "Sauk River above White Chuck R",
+    "latitude": 48.168888,
+    "longitude": -121.469444,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12189500,
+    "usgsId": 12189500,
+    "name": "Sauk River near Sauk",
+    "latitude": 48.4247222222222,
+    "longitude": -121.567222222222,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12191600,
+    "usgsId": 12191600,
+    "name": "Baker River  Baker Lk",
+    "latitude": 48.6494444444444,
+    "longitude": -121.689444444444,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12193400,
+    "usgsId": 12193400,
+    "name": "Baker River at Concrete",
+    "latitude": 48.540555555556,
+    "longitude": -121.74222222222,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12194000,
+    "usgsId": 12194000,
+    "name": "Skagit River near Concrete",
+    "latitude": 48.524444444444,
+    "longitude": -121.76972222222,
+    "floodThresholds": {
+      "minor": 28.0,
+      "moderate": 30.0,
+      "major": 32.5,
+      "action": 24.5
+    }
+  },
+  {
+    "id": 12200500,
+    "usgsId": 12200500,
+    "name": "Skagit River near Mt Vernon",
+    "latitude": 48.445,
+    "longitude": -122.33416666667,
+    "floodThresholds": {
+      "minor": 28.0,
+      "moderate": 30.0,
+      "major": 32.0,
+      "action": 23.5
+    }
+  },
+  {
+    "id": 12201500,
+    "usgsId": 12201500,
+    "name": "Samish River near Burlington",
+    "latitude": 48.54594127,
+    "longitude": -122.3382169,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12205000,
+    "usgsId": 12205000,
+    "name": "North Fork Nooksack River near Glacier",
+    "latitude": 48.90595739,
+    "longitude": -121.8443104,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12208000,
+    "usgsId": 12208000,
+    "name": "Middle Fork Nooksack River near Deming",
+    "latitude": 48.779444444444,
+    "longitude": -122.10527777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12210000,
+    "usgsId": 12210000,
+    "name": "South Fork Nooksack River near Saxon Bridge",
+    "latitude": 48.67761256,
+    "longitude": -122.1665454,
+    "floodThresholds": {
+      "minor": 8.0,
+      "moderate": 8.5,
+      "major": 9.5,
+      "action": 6.9
+    }
+  },
+  {
+    "id": 12210700,
+    "usgsId": 12210700,
+    "name": "Nooksack River at North Cedarvillle",
+    "latitude": 48.84178209,
+    "longitude": -122.2943258,
+    "floodThresholds": {
+      "minor": 146.5,
+      "moderate": 148.0,
+      "major": 150.0,
+      "action": 144.8
+    }
+  },
+  {
+    "id": 12211190,
+    "usgsId": 12211190,
+    "name": "Nooksack River Overflow at Emerson Rd",
+    "latitude": 48.9133333333333,
+    "longitude": -122.339166666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 89.1
+    }
+  },
+  {
+    "id": 12211195,
+    "usgsId": 12211195,
+    "name": "Nooksack River Overflow At SR544 Everson",
+    "latitude": 48.92012,
+    "longitude": -122.33405,
+    "floodThresholds": {
+      "minor": 4.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 3.55
+    }
+  },
+  {
+    "id": 12211200,
+    "usgsId": 12211200,
+    "name": "Nooksack River at Everson",
+    "latitude": 48.9180555555556,
+    "longitude": -122.346666666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 83.0
+    }
+  },
+  {
+    "id": 12211500,
+    "usgsId": 12211500,
+    "name": "Nooksack River near Lynden",
+    "latitude": 48.9203,
+    "longitude": -122.4857,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12213100,
+    "usgsId": 12213100,
+    "name": "Nooksack River at Ferndale",
+    "latitude": 48.84483249,
+    "longitude": -122.5893389,
+    "floodThresholds": {
+      "minor": 18.0,
+      "moderate": 20.5,
+      "major": 23.0,
+      "action": 15.0
+    }
+  },
+  {
+    "id": 12214500,
+    "usgsId": 12214500,
+    "name": "Sumas River near Sumas",
+    "latitude": 48.977777777778,
+    "longitude": -122.25416666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12395950,
+    "usgsId": 12395950,
+    "name": "Pend Oreille River at Cusick",
+    "latitude": 48.33601,
+    "longitude": -117.293,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12396455,
+    "usgsId": 12396455,
+    "name": "Pend Oreille River at Ione",
+    "latitude": 48.74103,
+    "longitude": -117.4133,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12396500,
+    "usgsId": 12396500,
+    "name": "Pend Oreille River below Box Canyon Dam",
+    "latitude": 48.7811111111111,
+    "longitude": -117.4163,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12401500,
+    "usgsId": 12401500,
+    "name": "Kettle River near Ferry",
+    "latitude": 48.9813,
+    "longitude": -118.7664,
+    "floodThresholds": {
+      "minor": 18.5,
+      "moderate": 19.5,
+      "major": 20.5,
+      "action": 17.5
+    }
+  },
+  {
+    "id": 12404500,
+    "usgsId": 12404500,
+    "name": "Kettle River near Laurier",
+    "latitude": 48.98434,
+    "longitude": -118.2164,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12409000,
+    "usgsId": 12409000,
+    "name": "Colville River at Kettle Falls",
+    "latitude": 48.59435,
+    "longitude": -118.06249,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12422000,
+    "usgsId": 12422000,
+    "name": "Spokane River below Green St at Spokane",
+    "latitude": 47.67906,
+    "longitude": -117.3647,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12422500,
+    "usgsId": 12422500,
+    "name": "Spokane River at Spokane",
+    "latitude": 47.65933,
+    "longitude": -117.4491,
+    "floodThresholds": {
+      "minor": 27.0,
+      "moderate": 29.0,
+      "major": 30.0,
+      "action": 26.0
+    }
+  },
+  {
+    "id": 12422990,
+    "usgsId": 12422990,
+    "name": "Hangman/Latah Creek near Tekoa",
+    "latitude": 47.20268,
+    "longitude": -117.0407,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12424000,
+    "usgsId": 12424000,
+    "name": "Hangman/Latah Creek at Spokane",
+    "latitude": 47.65267,
+    "longitude": -117.44966,
+    "floodThresholds": {
+      "minor": 11.0,
+      "moderate": 13.0,
+      "major": 15.0,
+      "action": 10.0
+    }
+  },
+  {
+    "id": 12431000,
+    "usgsId": 12431000,
+    "name": "Little Spokane River at Dartford",
+    "latitude": 47.78461,
+    "longitude": -117.40438,
+    "floodThresholds": {
+      "minor": 6.5,
+      "moderate": 7.5,
+      "major": 8.5,
+      "action": 5.5
+    }
+  },
+  {
+    "id": 12433200,
+    "usgsId": 12433200,
+    "name": "Chamokane Creek below Falls near Long Lake",
+    "latitude": 47.8632201,
+    "longitude": -117.858294,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12434590,
+    "usgsId": 12434590,
+    "name": "Sanpoil River above Jack Creek",
+    "latitude": 48.0843,
+    "longitude": -118.6914,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 6.5
+    }
+  },
+  {
+    "id": 12436000,
+    "usgsId": 12436000,
+    "name": "Columbia River above Grand Coulee Dam",
+    "latitude": 47.955555555556,
+    "longitude": -118.98388888889,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12438905,
+    "usgsId": 12438905,
+    "name": "Ninemile Creek near Oroville",
+    "latitude": 48.97037,
+    "longitude": -119.41857,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12439000,
+    "usgsId": 12439000,
+    "name": "Osoyoos Lake at Oroville",
+    "latitude": 48.95655,
+    "longitude": -119.4395,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12439500,
+    "usgsId": 12439500,
+    "name": "Okanogan River at Oroville",
+    "latitude": 48.93072,
+    "longitude": -119.4203,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12442500,
+    "usgsId": 12442500,
+    "name": "Similkameen River near Nighthawk",
+    "latitude": 48.9846,
+    "longitude": -119.6184,
+    "floodThresholds": {
+      "minor": 14.0,
+      "moderate": 15.0,
+      "major": 16.0,
+      "action": 13.0
+    }
+  },
+  {
+    "id": 12444550,
+    "usgsId": 12444550,
+    "name": "Bonaparte Creek at Tonasket",
+    "latitude": 48.7012,
+    "longitude": -119.4428,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12445000,
+    "usgsId": 12445000,
+    "name": "Okanogan River near Tonasket",
+    "latitude": 48.6324,
+    "longitude": -119.4617,
+    "floodThresholds": {
+      "minor": 15.0,
+      "moderate": 17.0,
+      "major": 18.0,
+      "action": 14.0
+    }
+  },
+  {
+    "id": 12445900,
+    "usgsId": 12445900,
+    "name": "Omak Creek near Omak",
+    "latitude": 48.3671,
+    "longitude": -119.445,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12446150,
+    "usgsId": 12446150,
+    "name": "North Fork Salmon Creek near Conconully",
+    "latitude": 48.5963,
+    "longitude": -119.77396,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12446400,
+    "usgsId": 12446400,
+    "name": "West Fork Salmon Creek near Conconully",
+    "latitude": 48.54098,
+    "longitude": -119.7642,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12446995,
+    "usgsId": 12446995,
+    "name": "Salmon Creek near Okanogan",
+    "latitude": 48.40515,
+    "longitude": -119.6217,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12447200,
+    "usgsId": 12447200,
+    "name": "Okanogan River at Malott",
+    "latitude": 48.28126,
+    "longitude": -119.7045,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12447383,
+    "usgsId": 12447383,
+    "name": "Methow River above Goat Creek near Mazama",
+    "latitude": 48.57425,
+    "longitude": -120.3859,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12447390,
+    "usgsId": 12447390,
+    "name": "Andrews Creek near Mazama",
+    "latitude": 48.8229,
+    "longitude": -120.1459,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12448000,
+    "usgsId": 12448000,
+    "name": "Chewuch River at Winthrop",
+    "latitude": 48.47709,
+    "longitude": -120.1865,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12448500,
+    "usgsId": 12448500,
+    "name": "Methow River at Winthrop",
+    "latitude": 48.47347,
+    "longitude": -120.1773,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12448998,
+    "usgsId": 12448998,
+    "name": "Twisp River near Twisp",
+    "latitude": 48.3699,
+    "longitude": -120.1487,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12449950,
+    "usgsId": 12449950,
+    "name": "Methow River near Pateros",
+    "latitude": 48.0774,
+    "longitude": -119.9851,
+    "floodThresholds": {
+      "minor": 10.0,
+      "moderate": 11.0,
+      "major": 12.0,
+      "action": 9.0
+    }
+  },
+  {
+    "id": 12451000,
+    "usgsId": 12451000,
+    "name": "Stehekin River at Stehekin",
+    "latitude": 48.32958,
+    "longitude": -120.69176,
+    "floodThresholds": {
+      "minor": 24.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 22.0
+    }
+  },
+  {
+    "id": 12451200,
+    "usgsId": 12451200,
+    "name": "Lake Chelan at Purple Point near Stehekin",
+    "latitude": 48.30597,
+    "longitude": -120.6543,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12452000,
+    "usgsId": 12452000,
+    "name": "Lake Chelan at Chelan",
+    "latitude": 47.83624,
+    "longitude": -120.06146,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12452800,
+    "usgsId": 12452800,
+    "name": "Entiat River near Ardenvoir",
+    "latitude": 47.8186111111111,
+    "longitude": -120.4231,
+    "floodThresholds": {
+      "minor": 7.5,
+      "moderate": 8.0,
+      "major": 9.0,
+      "action": 6.0
+    }
+  },
+  {
+    "id": 12452890,
+    "usgsId": 12452890,
+    "name": "Mad River at Ardenvoir",
+    "latitude": 47.73679,
+    "longitude": -120.3687,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12452990,
+    "usgsId": 12452990,
+    "name": "Entiat River near Entiat",
+    "latitude": 47.66319,
+    "longitude": -120.25063,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12456500,
+    "usgsId": 12456500,
+    "name": "Chiwawa River near Plain",
+    "latitude": 47.8373,
+    "longitude": -120.6623,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12457000,
+    "usgsId": 12457000,
+    "name": "Wenatchee River at Plain",
+    "latitude": 47.7629,
+    "longitude": -120.6662,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12459000,
+    "usgsId": 12459000,
+    "name": "Wenatchee River at Peshastin",
+    "latitude": 47.5832,
+    "longitude": -120.6195,
+    "floodThresholds": {
+      "minor": 13.0,
+      "moderate": 14.0,
+      "major": 15.0,
+      "action": 12.0
+    }
+  },
+  {
+    "id": 12462500,
+    "usgsId": 12462500,
+    "name": "Wenatchee River at Monitor",
+    "latitude": 47.49929,
+    "longitude": -120.4245,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12465000,
+    "usgsId": 12465000,
+    "name": "Crab Creek at Irby",
+    "latitude": 47.36042,
+    "longitude": -118.85,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12467000,
+    "usgsId": 12467000,
+    "name": "Crab Creek near Moses Lake",
+    "latitude": 47.18931,
+    "longitude": -119.2659,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12471000,
+    "usgsId": 12471000,
+    "name": "Moses Lake at Moses Lake",
+    "latitude": 47.10292,
+    "longitude": -119.3184,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12472800,
+    "usgsId": 12472800,
+    "name": "Columbia River below Priest Rapids Dam",
+    "latitude": 46.62874,
+    "longitude": -119.8647,
+    "floodThresholds": {
+      "minor": 32.0,
+      "moderate": 33.0,
+      "major": 34.0,
+      "action": 31.0
+    }
+  },
+  {
+    "id": 12484500,
+    "usgsId": 12484500,
+    "name": "Yakima River at Umtanum",
+    "latitude": 46.8626264,
+    "longitude": -120.480067,
+    "floodThresholds": {
+      "minor": 35.5,
+      "moderate": 38.0,
+      "major": 39.0,
+      "action": 33.5
+    }
+  },
+  {
+    "id": 12488500,
+    "usgsId": 12488500,
+    "name": "American River (WA) near Nile",
+    "latitude": 46.97761606,
+    "longitude": -121.168696,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12502500,
+    "usgsId": 12502500,
+    "name": "Ahtanum Creek at Union Gap",
+    "latitude": 46.53596038,
+    "longitude": -120.4733968,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12506000,
+    "usgsId": 12506000,
+    "name": "Toppenish Creek near Fort Simcoe",
+    "latitude": 46.3109589,
+    "longitude": -120.788125,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 12510500,
+    "usgsId": 12510500,
+    "name": "Yakima River at Kiona",
+    "latitude": 46.25346748,
+    "longitude": -119.4780794,
+    "floodThresholds": {
+      "minor": 13.0,
+      "moderate": 14.5,
+      "major": 16.0,
+      "action": 11.0
+    }
+  },
+  {
+    "id": 13334300,
+    "usgsId": 13334300,
+    "name": "Snake River (WA) near Anatone",
+    "latitude": 46.0971,
+    "longitude": -116.9776,
+    "floodThresholds": {
+      "minor": 20.0,
+      "moderate": 23.0,
+      "major": 24.0,
+      "action": 19.0
+    }
+  },
+  {
+    "id": 13335050,
+    "usgsId": 13335050,
+    "name": "Asotin Creek at Asotin",
+    "latitude": 46.34072,
+    "longitude": -117.05599,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 13344500,
+    "usgsId": 13344500,
+    "name": "Tucannon River near Starbuck",
+    "latitude": 46.5054217,
+    "longitude": -118.0663393,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 13348000,
+    "usgsId": 13348000,
+    "name": "South Fork Palouse River at Pullman",
+    "latitude": 46.73238,
+    "longitude": -117.181,
+    "floodThresholds": {
+      "minor": 7.0,
+      "moderate": 8.0,
+      "major": 9.0,
+      "action": 5.5
+    }
+  },
+  {
+    "id": 13351000,
+    "usgsId": 13351000,
+    "name": "Palouse River at Hooper",
+    "latitude": 46.75848,
+    "longitude": -118.14885,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14013000,
+    "usgsId": 14013000,
+    "name": "Mill Creek (WA) near Walla Walla",
+    "latitude": 46.00791557,
+    "longitude": -118.1185595,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14013700,
+    "usgsId": 14013700,
+    "name": "Mill Creek at Five Mile Bridge",
+    "latitude": 46.0856932,
+    "longitude": -118.2282912,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14015000,
+    "usgsId": 14015000,
+    "name": "Mill Creek (WA) at Walla Walla",
+    "latitude": 46.0762483,
+    "longitude": -118.2735722,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14018500,
+    "usgsId": 14018500,
+    "name": "Walla Walla River near Touchet",
+    "latitude": 46.0276341,
+    "longitude": -118.7297112,
+    "floodThresholds": {
+      "minor": 13.0,
+      "moderate": 15.0,
+      "major": 17.0,
+      "action": 10.0
+    }
+  },
+  {
+    "id": 14107000,
+    "usgsId": 14107000,
+    "name": "Klickitat River near Glenwood",
+    "latitude": 46.2648437,
+    "longitude": -121.245075,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14113000,
+    "usgsId": 14113000,
+    "name": "Klickitat River near Pitt",
+    "latitude": 45.75651098,
+    "longitude": -121.2100714,
+    "floodThresholds": {
+      "minor": 9.0,
+      "moderate": 11.0,
+      "major": 14.0,
+      "action": 8.0
+    }
+  },
+  {
+    "id": 14123500,
+    "usgsId": 14123500,
+    "name": "White Salmon River near Underwood",
+    "latitude": 45.751944444444,
+    "longitude": -121.52666666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14128500,
+    "usgsId": 14128500,
+    "name": "Wind River near Carson",
+    "latitude": 45.726784,
+    "longitude": -121.794799,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14128600,
+    "usgsId": 14128600,
+    "name": "Columbia River at Stevenson",
+    "latitude": 45.699444444444,
+    "longitude": -121.86722222222,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14216000,
+    "usgsId": 14216000,
+    "name": "Lewis River above Muddy River near Cougar 15E",
+    "latitude": 46.060555555556,
+    "longitude": -121.98333333333,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14216500,
+    "usgsId": 14216500,
+    "name": "Muddy River below Clear Creek",
+    "latitude": 46.0758333333333,
+    "longitude": -121.9975,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14217599,
+    "usgsId": 14217599,
+    "name": "Lewis River at Swift Reservoir",
+    "latitude": 46.062777777778,
+    "longitude": -122.13111111111,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14218480,
+    "usgsId": 14218480,
+    "name": "Lewis River at Yale Reservoir",
+    "latitude": 46.032777777778,
+    "longitude": -122.31166666667,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14219000,
+    "usgsId": 14219000,
+    "name": "Canyon Creek near Amboy",
+    "latitude": 45.940277777778,
+    "longitude": -122.31694444444,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14220500,
+    "usgsId": 14220500,
+    "name": "Lewis River at Ariel",
+    "latitude": 45.9519444444444,
+    "longitude": -122.562777777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14222500,
+    "usgsId": 14222500,
+    "name": "East Fork Lewis River near Heisson",
+    "latitude": 45.836666666667,
+    "longitude": -122.46611111111,
+    "floodThresholds": {
+      "minor": 20.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": 19.0
+    }
+  },
+  {
+    "id": 14226500,
+    "usgsId": 14226500,
+    "name": "Cowlitz River at Packwood",
+    "latitude": 46.613055555556,
+    "longitude": -121.67805555556,
+    "floodThresholds": {
+      "minor": 10.5,
+      "moderate": 11.0,
+      "major": 12.0,
+      "action": 8.2
+    }
+  },
+  {
+    "id": 14231000,
+    "usgsId": 14231000,
+    "name": "Cowlitz River at Randle",
+    "latitude": 46.5319,
+    "longitude": -121.9569,
+    "floodThresholds": {
+      "minor": 18.0,
+      "moderate": 20.0,
+      "major": 22.0,
+      "action": 13.2
+    }
+  },
+  {
+    "id": 14231900,
+    "usgsId": 14231900,
+    "name": "Cispus River near Randle",
+    "latitude": 46.444166666667,
+    "longitude": -121.83888888889,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14233500,
+    "usgsId": 14233500,
+    "name": "Cowlitz River near Kosmos",
+    "latitude": 46.466388888889,
+    "longitude": -122.10777777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14236200,
+    "usgsId": 14236200,
+    "name": "Tilton River near Cinebar",
+    "latitude": 46.595555555556,
+    "longitude": -122.45833333333,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14238000,
+    "usgsId": 14238000,
+    "name": "Cowlitz River below Mayfield Dam",
+    "latitude": 46.510555555556,
+    "longitude": -122.615,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14240525,
+    "usgsId": 14240525,
+    "name": "N Fk Toutle River below Sediment Retention Structure near Toutle",
+    "latitude": 46.371944444444,
+    "longitude": -122.57777777778,
+    "floodThresholds": {
+      "minor": -9999.0,
+      "moderate": -9999.0,
+      "major": -9999.0,
+      "action": -9999.0
+    }
+  },
+  {
+    "id": 14242580,
+    "usgsId": 14242580,
+    "name": "Toutle River at Tower Road near Silver Lake",
+    "latitude": 46.335,
+    "longitude": -122.840833,
+    "floodThresholds": {
+      "minor": 137.0,
+      "moderate": 139.0,
+      "major": 140.0,
+      "action": 135.0
+    }
+  },
+  {
+    "id": 14243000,
+    "usgsId": 14243000,
+    "name": "Cowlitz River at Castle Rock",
+    "latitude": 46.274444444444,
+    "longitude": -122.9125,
+    "floodThresholds": {
+      "minor": 48.0,
+      "moderate": 54.0,
+      "major": 57.0,
+      "action": 46.0
+    }
+  }
+]

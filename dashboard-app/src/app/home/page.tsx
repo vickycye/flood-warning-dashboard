@@ -3,9 +3,9 @@ import React, { useState } from "react";
 import { Search, Map, TrendingUp, AlertTriangle } from "lucide-react";
 
 const featuredRivers = [
-  { id: 1, name: "Snohomish River", location: "Monroe, WA", riskLevel: "moderate", lastFlood: "2022" },
-  { id: 2, name: "Nooksack River", location: "Ferndale, WA", riskLevel: "high", lastFlood: "2023" },
-  { id: 3, name: "Skagit River", location: "Mount Vernon, WA", riskLevel: "low", lastFlood: "2019" }
+  { id: 1, name: "Snohomish River near Monroe, WA", location: "Monroe, WA", riskLevel: "moderate", lastFlood: "2022" },
+  { id: 2, name: "Nooksack River at Ferndale, WA", location: "Ferndale, WA", riskLevel: "high", lastFlood: "2023" },
+  { id: 3, name: "Skagit River near Mount Vernon, WA", location: "Mount Vernon, WA", riskLevel: "low", lastFlood: "2019" }
 ];
 
 const getRiskLevelClasses = (riskLevel: string) => {
@@ -44,7 +44,7 @@ export default function LandingPage() {
             <Search className="absolute left-3 top-4 h-5 w-5 text-secondary-gray" />
             <input
               type="text"
-              placeholder="Search by city, ZIP code, or river name..."
+              placeholder="Search by city, ZIP code (e.g., 98052), or river name..."
               className="w-full pl-10 pr-4 py-3 text-gray-700 border-1 border-secondary-gray focus:ring-1 focus:ring-primary-purple focus:border-primary-purple"
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)}

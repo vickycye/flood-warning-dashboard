@@ -1,246 +1,371 @@
 "use client";
 import React, { useState, useEffect } from "react";
-import { MapPin, Eye, EyeOff, Calendar, TrendingUp, Info, Download, BarChart3, Droplets, Activity, Database, Settings } from "lucide-react";
+import { MapPin, Eye, EyeOff, Calendar, TrendingUp, Info, Download, BarChart3, Droplets, Activity } from "lucide-react";
 import dynamic from 'next/dynamic';
+import { useParams } from 'next/navigation';
 
-// Dynamically import the map components to avoid SSR issues
+// Type imports
+import { 
+  RiverData, 
+  RiverCoordinates, 
+  TimeSeriesData, 
+  FloodEvent, 
+  FloodThresholds,
+  SidebarTab, 
+  MainTab, 
+  DateRangeOption,
+  CSVFloodSite,
+  FloodCountsData
+} from '../../../lib/types';
+
+// Utility imports
+import { fetchUSGSTimeSeriesData, fetchUSGSFloodEvents } from '../../../lib/usgsApi';
+import { parseFloodSitesCSV, getFloodThresholds } from '../../../lib/csvUtils';
+import { filterFloodEventsByDateRange, calculateFloodCounts } from '../../../lib/chartUtils';
+
+// Component imports
+import { FloodSummaryCard } from '../../../components/ui/FloodSummaryCard';
+import { ProfessionalTimeSeriesChart } from '../../../components/ui/TimeSeriesChart';
+import { FloodAnalysisChart } from '../../../components/ui/FloodAnalysisChart';
+import { FloodEventsList } from '../../../components/ui/FloodEventsList';
+
+// Dynamically import map components to avoid SSR issues
 const MapContainer = dynamic(() => import('react-leaflet').then(mod => mod.MapContainer), { ssr: false });
 const TileLayer = dynamic(() => import('react-leaflet').then(mod => mod.TileLayer), { ssr: false });
 const Marker = dynamic(() => import('react-leaflet').then(mod => mod.Marker), { ssr: false });
 const Popup = dynamic(() => import('react-leaflet').then(mod => mod.Popup), { ssr: false });
 
-const riverData = {
-  name: "Snohomish River",
-  location: "Monroe, WA",
-  coordinates: "47.86°N, 121.97°W",
-  usgsId: "12150800",
-  floodHistory: {
-    totalEvents: 23,
-    majorEvents: 5,
-    moderateEvents: 12,
-    minorEvents: 6,
-    recentYears: [2022, 2020, 2017, 2015, 2012]
+// USGS gauge site data mapping with accurate site names
+const riversData: Record<string, RiverData> = {
+  "1": {
+    name: "Snohomish River near Monroe, WA",
+    location: "Monroe, WA",
+    coordinates: "47.86°N, 121.97°W",
+    usgsId: "12150800",
+    floodHistory: {
+      totalEvents: 23,
+      majorEvents: 5,
+      moderateEvents: 12,
+      minorEvents: 6,
+      recentYears: [2022, 2020, 2017, 2015, 2012]
+    },
+    futureProjections: {
+      current: { minor: 2.1, moderate: 0.8, major: 0.2 },
+      mid: { minor: 3.2, moderate: 1.4, major: 0.5 },
+      end: { minor: 4.1, moderate: 2.0, major: 0.8 }
+    }
   },
-  futureProjections: {
-    current: { minor: 2.1, moderate: 0.8, major: 0.2 },
-    mid: { minor: 3.2, moderate: 1.4, major: 0.5 },
-    end: { minor: 4.1, moderate: 2.0, major: 0.8 }
+  "2": {
+    name: "Nooksack River at Ferndale, WA",
+    location: "Ferndale, WA",
+    coordinates: "48.85°N, 122.59°W",
+    usgsId: "12213100",
+    floodHistory: {
+      totalEvents: 18,
+      majorEvents: 7,
+      moderateEvents: 8,
+      minorEvents: 3,
+      recentYears: [2023, 2021, 2018, 2016, 2013]
+    },
+    futureProjections: {
+      current: { minor: 3.1, moderate: 1.2, major: 0.4 },
+      mid: { minor: 4.2, moderate: 1.8, major: 0.7 },
+      end: { minor: 5.3, moderate: 2.4, major: 1.1 }
+    }
+  },
+  "3": {
+    name: "Skagit River near Mount Vernon, WA",
+    location: "Mount Vernon, WA",
+    coordinates: "48.42°N, 122.33°W",
+    usgsId: "12194000",
+    floodHistory: {
+      totalEvents: 15,
+      majorEvents: 3,
+      moderateEvents: 7,
+      minorEvents: 5,
+      recentYears: [2019, 2017, 2014, 2012, 2010]
+    },
+    futureProjections: {
+      current: { minor: 1.8, moderate: 0.6, major: 0.1 },
+      mid: { minor: 2.5, moderate: 1.0, major: 0.3 },
+      end: { minor: 3.2, moderate: 1.4, major: 0.6 }
+    }
+  },
+  "4": {
+    name: "North Fork Stillaguamish River near Arlington, WA",
+    location: "Arlington, WA",
+    coordinates: "48.20°N, 122.13°W",
+    usgsId: "12167000",
+    floodHistory: {
+      totalEvents: 20,
+      majorEvents: 4,
+      moderateEvents: 10,
+      minorEvents: 6,
+      recentYears: [2021, 2019, 2016, 2014, 2011]
+    },
+    futureProjections: {
+      current: { minor: 2.5, moderate: 0.9, major: 0.3 },
+      mid: { minor: 3.4, moderate: 1.3, major: 0.5 },
+      end: { minor: 4.3, moderate: 1.8, major: 0.8 }
+    }
+  },
+  "5": {
+    name: "Puyallup River at Puyallup, WA",
+    location: "Puyallup, WA",
+    coordinates: "47.19°N, 122.29°W",
+    usgsId: "12092000",
+    floodHistory: {
+      totalEvents: 25,
+      majorEvents: 8,
+      moderateEvents: 11,
+      minorEvents: 6,
+      recentYears: [2023, 2021, 2018, 2016, 2013]
+    },
+    futureProjections: {
+      current: { minor: 3.8, moderate: 1.5, major: 0.6 },
+      mid: { minor: 4.9, moderate: 2.1, major: 0.9 },
+      end: { minor: 6.0, moderate: 2.7, major: 1.3 }
+    }
+  },
+  "6": {
+    name: "Cedar River at Renton, WA",
+    location: "Renton, WA",
+    coordinates: "47.48°N, 122.22°W",
+    usgsId: "12119000",
+    floodHistory: {
+      totalEvents: 16,
+      majorEvents: 3,
+      moderateEvents: 8,
+      minorEvents: 5,
+      recentYears: [2022, 2020, 2017, 2015, 2012]
+    },
+    futureProjections: {
+      current: { minor: 2.2, moderate: 0.7, major: 0.2 },
+      mid: { minor: 3.0, moderate: 1.1, major: 0.4 },
+      end: { minor: 3.8, moderate: 1.5, major: 0.7 }
+    }
   }
 };
 
-const SIDEBAR_TABS = [
+// Configuration constants
+const SIDEBAR_TABS: SidebarTab[] = [
   { id: "timeseries", label: "Time Series", icon: Activity, description: "Stage & Discharge" },
   { id: "floods", label: "Flood Events", icon: Droplets, description: "Historical Floods" },
   { id: "analysis", label: "Analysis", icon: BarChart3, description: "Data Analysis" },
-  // { id: "settings", label: "Settings", icon: Settings, description: "Preferences" }
 ];
 
-const MAIN_TABS = [
+const MAIN_TABS: MainTab[] = [
   { id: "history", label: "Flood History", icon: Calendar },
   { id: "projections", label: "Future Risk", icon: TrendingUp },
   { id: "learn", label: "Learn More", icon: Info },
   { id: "data", label: "Download Data", icon: Download }
 ];
 
-export default function RiverDashboardPage() {
-  const [activeTab, setActiveTab] = useState("history");
-  const [activeSidebarTab, setActiveSidebarTab] = useState("timeseries");
-  const [expertMode, setExpertMode] = useState(false);
-  const [riverCoordinates, setRiverCoordinates] = useState<{lat: number, lng: number} | null>(null);
-  const [mapLoading, setMapLoading] = useState(true);
+const DATE_RANGE_OPTIONS: DateRangeOption[] = [
+  { value: "all", label: "All Time", years: null },
+  { value: "last1", label: "Last Year", years: 1 },
+  { value: "last5", label: "Last 5 Years", years: 5 },
+  { value: "last10", label: "Last 10 Years", years: 10 },
+  { value: "last20", label: "Last 20 Years", years: 20 },
+  { value: "last50", label: "Last 50 Years", years: 50 }
+];
 
-  // Real USGS API data with interactive features
-  const [timeSeriesData, setTimeSeriesData] = useState<{
-    stage: Array<{dateTime: string, value: number, qualifiers?: string[]}>;
-    discharge: Array<{dateTime: string, value: number, qualifiers?: string[]}>;
-  }>({
-    stage: [],
-    discharge: []
-  });
-  const [dataLoading, setDataLoading] = useState(true);
+export default function RiverDashboardPage(): React.ReactElement {
+  const params = useParams();
+  const riverId = params.id as string;
+  const riverData = riversData[riverId] || riversData["1"];
+  
+  // UI State
+  const [activeTab, setActiveTab] = useState<string>("history");
+  const [activeSidebarTab, setActiveSidebarTab] = useState<string>("timeseries");
+  const [expertMode, setExpertMode] = useState<boolean>(false);
+  const [selectedDateRange, setSelectedDateRange] = useState<string>("all");
+  
+  // Map State
+  const [riverCoordinates, setRiverCoordinates] = useState<RiverCoordinates | null>(null);
+  const [mapLoading, setMapLoading] = useState<boolean>(true);
+  
+  // Data State
+  const [timeSeriesData, setTimeSeriesData] = useState<TimeSeriesData>({ stage: [], discharge: [] });
+  const [floodEvents, setFloodEvents] = useState<FloodEvent[]>([]);
+  const [floodThresholds, setFloodThresholds] = useState<FloodThresholds | null>(null);
+  const [floodSitesData, setFloodSitesData] = useState<CSVFloodSite[]>([]);
+  
+  // Loading States
+  const [dataLoading, setDataLoading] = useState<boolean>(true);
+  const [floodDataLoading, setFloodDataLoading] = useState<boolean>(true);
   const [dataError, setDataError] = useState<string | null>(null);
-  const [hoveredPoint, setHoveredPoint] = useState<{x: number, y: number, data: {dateTime: string, value: number, qualifiers?: string[]}, type: 'stage' | 'discharge'} | null>(null);
 
-  // Fetch real USGS data - no fallbacks
-  useEffect(() => {
-    const fetchUSGSData = async () => {
-      try {
-        setDataLoading(true);
-        setDataError(null);
-
-        // USGS Water Services API endpoints - get more recent data
-        const siteId = riverData.usgsId; // "12150800" for Snohomish River
-        const endDate = new Date().toISOString();
-        const startDate = new Date(Date.now() - 3 * 24 * 60 * 60 * 1000).toISOString(); // Last 3 days for more recent data
-
-        // Fetch stage data (parameter code: 00065 for stage)
-        const stageResponse = await fetch(
-          `https://waterservices.usgs.gov/nwis/iv/?sites=${siteId}&parameterCd=00065&startDT=${startDate}&endDT=${endDate}&format=json`
-        );
-        
-        if (!stageResponse.ok) {
-          throw new Error(`Stage data fetch failed: ${stageResponse.status}`);
-        }
-        
-        const stageData = await stageResponse.json();
-
-        // Fetch discharge data (parameter code: 00060 for discharge)
-        const dischargeResponse = await fetch(
-          `https://waterservices.usgs.gov/nwis/iv/?sites=${siteId}&parameterCd=00060&startDT=${startDate}&endDT=${endDate}&format=json`
-        );
-        
-        if (!dischargeResponse.ok) {
-          throw new Error(`Discharge data fetch failed: ${dischargeResponse.status}`);
-        }
-        
-        const dischargeData = await dischargeResponse.json();
-
-        // Process stage data with full datetime
-        const processedStage = stageData.value?.timeSeries?.[0]?.values?.[0]?.value?.map((point: {dateTime: string, value: string, qualifiers?: string[]}) => ({
-          dateTime: point.dateTime,
-          value: parseFloat(point.value),
-          qualifiers: point.qualifiers || []
-        })) || [];
-
-        // Process discharge data with full datetime
-        const processedDischarge = dischargeData.value?.timeSeries?.[0]?.values?.[0]?.value?.map((point: {dateTime: string, value: string, qualifiers?: string[]}) => ({
-          dateTime: point.dateTime,
-          value: parseFloat(point.value),
-          qualifiers: point.qualifiers || []
-        })) || [];
-
-        if (processedStage.length === 0 && processedDischarge.length === 0) {
-          throw new Error('No data available for the specified time period');
-        }
-
-        setTimeSeriesData({
-          stage: processedStage,
-          discharge: processedDischarge
-        });
-
-        setDataLoading(false);
-      } catch (error) {
-        console.error('Error fetching USGS data:', error);
-        setDataError(`Failed to load real-time data: ${error instanceof Error ? error.message : 'Unknown error'}`);
-        setDataLoading(false);
+  /**
+   * Load and parse the CSV flood sites data
+   */
+  const loadFloodSitesData = async (): Promise<void> => {
+    try {
+      // In Next.js, read CSV from public directory or use static import
+      const response = await fetch('/data/flood_levels_all_sites_valid.csv');
+      if (!response.ok) {
+        throw new Error(`Failed to fetch CSV: ${response.status}`);
       }
-    };
-
-    fetchUSGSData();
-  }, []);
-
-  // Helper functions for interactive chart
-  const formatDateTime = (dateTime: string) => {
-    return new Date(dateTime).toLocaleString('en-US', {
-      month: 'short',
-      day: 'numeric',
-      hour: '2-digit',
-      minute: '2-digit',
-      hour12: true
-    });
-  };
-
-  const formatValue = (value: number, type: 'stage' | 'discharge') => {
-    if (type === 'stage') {
-      return `${value.toFixed(2)} ft`;
-    } else {
-      return value >= 1000 ? `${(value / 1000).toFixed(1)}k cfs` : `${value.toFixed(0)} cfs`;
+      const csvContent = await response.text();
+      
+      const parsedData = await parseFloodSitesCSV(csvContent);
+      setFloodSitesData(parsedData);
+      
+      // Extract flood thresholds for current river
+      const thresholds = getFloodThresholds(riverData.usgsId, parsedData);
+      setFloodThresholds(thresholds);
+    } catch (error) {
+      console.error('Error loading flood sites data:', error);
     }
   };
 
-  const getChartDimensions = (data: {value: number}[]) => {
-    if (data.length === 0) return { min: 0, max: 10, range: 10 };
-    
-    const values = data.map(d => d.value);
-    const min = Math.min(...values);
-    const max = Math.max(...values);
-    const range = max - min;
-    
-    // Add padding
-    const padding = range * 0.1;
-    return {
-      min: Math.max(0, min - padding),
-      max: max + padding,
-      range: (max + padding) - Math.max(0, min - padding)
-    };
+  /**
+   * Fetch real-time USGS time series data
+   */
+  const loadTimeSeriesData = async (): Promise<void> => {
+    try {
+      setDataLoading(true);
+      setDataError(null);
+      
+      const data = await fetchUSGSTimeSeriesData(riverData.usgsId, 7);
+      setTimeSeriesData(data);
+    } catch (error) {
+      console.error('Error fetching USGS time series data:', error);
+      setDataError(`Failed to load real-time data: ${error instanceof Error ? error.message : 'Unknown error'}`);
+    } finally {
+      setDataLoading(false);
+    }
   };
 
-  const getPointPosition = (index: number, total: number, value: number, dimensions: {min: number, max: number, range: number}, chartHeight: number) => {
-    const x = (index / (total - 1)) * 400;
-    const y = chartHeight - ((value - dimensions.min) / dimensions.range) * chartHeight;
-    return { x, y };
+  /**
+   * Fetch historical flood events data
+   */
+  const loadFloodEventsData = async (): Promise<void> => {
+    if (!floodThresholds) return;
+    
+    try {
+      setFloodDataLoading(true);
+      const events = await fetchUSGSFloodEvents(riverData.usgsId, floodThresholds);
+      setFloodEvents(events);
+    } catch (error) {
+      console.error('Error fetching flood events:', error);
+    } finally {
+      setFloodDataLoading(false);
+    }
   };
 
-  const floodEvents = [
-    { date: '2022-12-15', stage: 8.2, discharge: 12000, severity: 'major' },
-    { date: '2020-11-28', stage: 6.8, discharge: 8500, severity: 'moderate' },
-    { date: '2017-10-12', stage: 5.4, discharge: 6200, severity: 'minor' },
-    { date: '2015-09-20', stage: 7.1, discharge: 9500, severity: 'moderate' },
-    { date: '2012-08-15', stage: 6.2, discharge: 7200, severity: 'minor' }
-  ];
-
-  // Geocode the river location to get coordinates
-  useEffect(() => {
-    const geocodeRiverLocation = async () => {
-      try {
-        const searchQuery = `${riverData.name}, ${riverData.location}`;
-        const response = await fetch(
-          `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&limit=1`
-        );
-        const data = await response.json();
-        
-        if (data && data.length > 0) {
-          setRiverCoordinates({
-            lat: parseFloat(data[0].lat),
-            lng: parseFloat(data[0].lon)
-          });
-        } else {
-          // Fallback to approximate coordinates for Monroe, WA
-          setRiverCoordinates({
-            lat: 47.8311,
-            lng: -122.0472
-          });
-        }
-        setMapLoading(false);
-      } catch (error) {
-        console.error('Geocoding error:', error);
-        // Fallback coordinates
+  /**
+   * Geocode river location for map display
+   */
+  const geocodeRiverLocation = async (): Promise<void> => {
+    try {
+      const searchQuery = `${riverData.name}, ${riverData.location}`;
+      const response = await fetch(
+        `https://nominatim.openstreetmap.org/search?format=json&q=${encodeURIComponent(searchQuery)}&limit=1`
+      );
+      const data = await response.json();
+      
+      if (data?.[0]) {
         setRiverCoordinates({
-          lat: 47.8554,
-          lng: -121.9709
+          lat: parseFloat(data[0].lat),
+          lng: parseFloat(data[0].lon)
         });
-        setMapLoading(false);
+      } else {
+        // Fallback coordinates for Monroe, WA area
+        setRiverCoordinates({ lat: 47.8311, lng: -122.0472 });
       }
-    };
+    } catch (error) {
+      console.error('Geocoding error:', error);
+      setRiverCoordinates({ lat: 47.8554, lng: -121.9709 });
+    } finally {
+      setMapLoading(false);
+    }
+  };
 
-    geocodeRiverLocation();
-  }, []);
+  // Load initial data
+  useEffect(() => {
+    const initializeData = async () => {
+      await loadFloodSitesData();
+      await loadTimeSeriesData();
+      await geocodeRiverLocation();
+    };
+    
+    initializeData();
+  }, [riverData.usgsId]);
+
+  // Load flood events when thresholds are available
+  useEffect(() => {
+    if (floodThresholds) {
+      loadFloodEventsData();
+    }
+  }, [floodThresholds]);
+
+  /**
+   * Get filtered flood events based on selected date range
+   */
+  const getFilteredFloodEvents = (): FloodEvent[] => {
+    const selectedOption = DATE_RANGE_OPTIONS.find(opt => opt.value === selectedDateRange);
+    return filterFloodEventsByDateRange(floodEvents, selectedOption?.years ?? null);
+  };
+
+  /**
+   * Calculate flood counts for current date range
+   */
+  const getFloodCounts = (): FloodCountsData => {
+    const filteredEvents = getFilteredFloodEvents();
+    return calculateFloodCounts(filteredEvents);
+  };
+
+  /**
+   * Handle date range selection change
+   */
+  const handleDateRangeChange = (range: string): void => {
+    setSelectedDateRange(range);
+  };
+
+  /**
+   * Toggle expert mode display
+   */
+  const toggleExpertMode = (): void => {
+    setExpertMode(prev => !prev);
+  };
+
+  /**
+   * Navigate to home page
+   */
+  const navigateToHome = (): void => {
+    window.location.assign("/");
+  };
 
   return (
     <div className="min-h-screen bg-background-lightpurple">
+      {/* Header Section */}
       <div className="bg-primary-purple border-b-2 border-secondary-gold shadow-sm">
         <div className="max-w-6xl mx-auto px-4 py-6">
           <div className="flex items-center justify-between mb-4">
             <button
-              onClick={() => window.location.assign("/")}
+              onClick={navigateToHome}
               className="text-secondary-white hover:text-supp-bright-brick flex items-center transition-colors"
+              aria-label="Back to search"
             >
               ← Back to Search
             </button>
             <div className="flex items-center space-x-2">
               <button
-                onClick={() => setExpertMode(!expertMode)}
+                onClick={toggleExpertMode}
                 className={`flex items-center px-3 py-1 text-sm border-2 rounded transition-colors ${
                   expertMode 
                     ? "bg-supp-bright-cream text-primary-purple border-secondary-gold" 
                     : "bg-secondary-gray text-secondary-white border-secondary-gray"
                 }`}
+                aria-label={`Switch to ${expertMode ? 'simple' : 'expert'} view`}
               >
                 {expertMode ? <Eye className="h-4 w-4 mr-1" /> : <EyeOff className="h-4 w-4 mr-1" />}
                 {expertMode ? "Expert View" : "Simple View"}
               </button>
             </div>
           </div>
+          
           <div className="flex items-start justify-between">
             <div>
               <h1 className="text-3xl font-bold text-secondary-white pt-6">{riverData.name}</h1>
@@ -250,54 +375,60 @@ export default function RiverDashboardPage() {
                   {riverData.location}
                 </span>
                 {expertMode && (
-                  <span className="text-sm text-secondary-gray">USGS ID: {riverData.usgsId}</span>
+                  <span className="text-sm text-secondary-gray pt-6">
+                    USGS ID: {riverData.usgsId}
+                  </span>
                 )}
               </div>
             </div>
-                          <div className="bg-supp-bright-cream p-3 w-48 h-32 rounded">
-                <div className="text-xs text-primary-purple mb-1">Location</div>
-                <div className="w-full h-full rounded overflow-hidden border border-secondary-gold">
-                  {mapLoading ? (
-                    <div className="w-full h-full flex items-center justify-center bg-background-lightpurple">
-                      <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-purple"></div>
-                    </div>
-                  ) : riverCoordinates ? (
-                    <MapContainer
-                      center={[riverCoordinates.lat, riverCoordinates.lng]}
-                      zoom={12}
-                      style={{ height: '100%', width: '100%' }}
-                      zoomControl={false}
-                      attributionControl={false}
-                      dragging={false}
-                      touchZoom={false}
-                      scrollWheelZoom={false}
-                      doubleClickZoom={false}
-                      boxZoom={false}
-                      keyboard={false}
-                    >
-                      <TileLayer
-                        attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-                        url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
-                      />
-                      <Marker position={[riverCoordinates.lat, riverCoordinates.lng]}>
-                        <Popup>
-                          <div className="text-center text-xs">
-                            <strong>{riverData.name}</strong><br />
-                            {riverData.location}
-                          </div>
-                        </Popup>
-                      </Marker>
-                    </MapContainer>
-                  ) : (
-                    <div className="w-full h-full flex items-center justify-center bg-background-lightpurple">
-                      <MapPin className="h-6 w-6 text-primary-purple" />
-                    </div>
-                  )}
-                </div>
+            
+            {/* Location Mini-Map */}
+            <div className="bg-supp-bright-cream p-3 w-48 h-32 rounded">
+              <div className="text-xs text-primary-purple mb-1">Location</div>
+              <div className="w-full h-full rounded overflow-hidden border border-secondary-gold">
+                {mapLoading ? (
+                  <div className="w-full h-full flex items-center justify-center bg-background-lightpurple">
+                    <div className="animate-spin rounded-full h-4 w-4 border-b-2 border-primary-purple"></div>
+                  </div>
+                ) : riverCoordinates ? (
+                  <MapContainer
+                    center={[riverCoordinates.lat, riverCoordinates.lng]}
+                    zoom={12}
+                    style={{ height: '100%', width: '100%' }}
+                    zoomControl={false}
+                    attributionControl={false}
+                    dragging={false}
+                    touchZoom={false}
+                    scrollWheelZoom={false}
+                    doubleClickZoom={false}
+                    boxZoom={false}
+                    keyboard={false}
+                  >
+                    <TileLayer
+                      attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
+                      url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
+                    />
+                    <Marker position={[riverCoordinates.lat, riverCoordinates.lng]}>
+                      <Popup>
+                        <div className="text-center text-xs">
+                          <strong>{riverData.name}</strong><br />
+                          {riverData.location}
+                        </div>
+                      </Popup>
+                    </Marker>
+                  </MapContainer>
+                ) : (
+                  <div className="w-full h-full flex items-center justify-center bg-background-lightpurple">
+                    <MapPin className="h-6 w-6 text-primary-purple" />
+                  </div>
+                )}
               </div>
+            </div>
           </div>
         </div>
       </div>
+
+      {/* Navigation Tabs */}
       <div className="bg-secondary-white">
         <div className="max-w-6xl mx-auto px-4">
           <nav className="flex space-x-8">
@@ -310,6 +441,7 @@ export default function RiverDashboardPage() {
                     ? "border-secondary-gold text-primary-purple"
                     : "border-transparent text-secondary-gray hover:text-primary-purple"
                 }`}
+                aria-label={`Switch to ${tab.label} tab`}
               >
                 <tab.icon className="h-4 w-4 mr-2" />
                 {tab.label}
@@ -319,470 +451,147 @@ export default function RiverDashboardPage() {
         </div>
       </div>
 
-        {/* Main Content Area */}
-        <div className="flex-1 p-8 bg-supp-bright-cream">
-          {/* Main tab content - always visible */}
-          {activeTab === "history" && (
-            <div className="space-y-8">
-              {/* Historical Flood Summary - appears above everything */}
-              <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
-                <h2 className="text-xl font-semibold mb-4 text-primary-purple">Historical Flood Summary</h2>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 mb-6">
-                  <div className="text-center p-4 bg-background-lightpurple rounded">
-                    <div className="text-2xl font-bold text-primary-purple">{riverData.floodHistory.totalEvents}</div>
-                    <div className="text-sm text-secondary-black">Total Floods Since [date TBD]</div>
-                  </div>
-                  <div className="text-center p-4 bg-supp-bright-brick rounded">
-                    <div className="text-2xl font-bold text-secondary-white">{riverData.floodHistory.majorEvents}</div>
-                    <div className="text-sm text-secondary-white">Major Floods</div>
-                  </div>
-                  <div className="text-center p-4 bg-supp-bright-gold rounded">
-                    <div className="text-2xl font-bold text-secondary-white">{riverData.floodHistory.moderateEvents}</div>
-                    <div className="text-sm text-secondary-white">Moderate Floods</div>
-                  </div>
-                  <div className="text-center p-4 bg-supp-bright-green rounded">
-                    <div className="text-2xl font-bold text-secondary-white">{riverData.floodHistory.minorEvents}</div>
-                    <div className="text-sm text-secondary-white">Minor Floods</div>
-                  </div>
-                </div>
-              </div>
+      {/* Main Content Area */}
+      <div className="flex-1 p-8 bg-supp-bright-cream">
+        {/* History Tab Content */}
+        {activeTab === "history" && (
+          <div className="space-y-8">
+            {/* Flood Summary Card */}
+            <FloodSummaryCard
+              floodCounts={getFloodCounts()}
+              selectedDateRange={selectedDateRange}
+              onDateRangeChange={handleDateRangeChange}
+              dateRangeOptions={DATE_RANGE_OPTIONS}
+              floodEvents={getFilteredFloodEvents()}
+              isLoading={floodDataLoading}
+            />
 
-              {/* Time Series Data + Sidebar - only when on history tab */}
-              <div className="flex">
-                {/* Vertical Sidebar */}
-                <div className="w-64 bg-supp-bright-cream border-r border-secondary-gold max-h-screen">
-                  <div className="p-4">
-                    <h3 className="text-lg font-semibold text-primary-purple mb-4">Data Views</h3>
-                    <nav className="space-y-2">
-                      {SIDEBAR_TABS.map((tab) => (
-                        <button
-                          key={tab.id}
-                          onClick={() => setActiveSidebarTab(tab.id)}
-                          className={`w-full text-left p-3 rounded-lg transition-colors ${
-                            activeSidebarTab === tab.id
-                              ? "bg-primary-purple text-secondary-white"
-                              : "bg-secondary-white text-secondary-black hover:bg-background-lightpurple"
-                          }`}
-                        >
-                          <div className="flex items-center">
-                            <tab.icon className="h-5 w-5 mr-3" />
-                            <div>
-                              <div className="font-medium">{tab.label}</div>
-                              <div className={`text-xs ${activeSidebarTab === tab.id ? 'text-secondary-gold' : 'text-secondary-gray'}`}>
-                                {tab.description}
-                              </div>
+            {/* Main Content with Sidebar */}
+            <div className="flex">
+              {/* Vertical Sidebar */}
+              <div className="w-64 bg-supp-bright-cream border-r border-secondary-gold">
+                <div className="p-4">
+                  <h3 className="text-lg font-semibold text-primary-purple mb-4">Data Views</h3>
+                  <nav className="space-y-2">
+                    {SIDEBAR_TABS.map((tab) => (
+                      <button
+                        key={tab.id}
+                        onClick={() => setActiveSidebarTab(tab.id)}
+                        className={`w-full text-left p-3 rounded-lg transition-colors ${
+                          activeSidebarTab === tab.id
+                            ? "bg-primary-purple text-secondary-white"
+                            : "bg-secondary-white text-secondary-black hover:bg-background-lightpurple"
+                        }`}
+                        aria-label={`Switch to ${tab.label} view`}
+                      >
+                        <div className="flex items-center">
+                          <tab.icon className="h-5 w-5 mr-3" />
+                          <div>
+                            <div className="font-medium">{tab.label}</div>
+                            <div className={`text-xs ${activeSidebarTab === tab.id ? 'text-secondary-gold' : 'text-secondary-gray'}`}>
+                              {tab.description}
                             </div>
                           </div>
-                        </button>
-                      ))}
-                    </nav>
-                  </div>
-                </div>
-
-                {/* Time Series Content */}
-                <div className="flex-1 pl-8">
-                  {activeSidebarTab === "timeseries" && (
-                    <div className="space-y-6">
-                      <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
-                        <h2 className="text-xl font-semibold mb-4 text-primary-purple">Time Series Data</h2>
-                        
-                        {dataError && (
-                          <div className="bg-supp-bright-brick bg-opacity-10 border border-supp-bright-brick text-supp-bright-brick p-3 rounded-lg mb-4">
-                            <p className="text-sm">{dataError}</p>
-                          </div>
-                        )}
-
-                        {dataLoading ? (
-                          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
-                            <div className="bg-supp-bright-cream p-4 rounded-lg">
-                              <h3 className="text-lg font-semibold mb-3 text-primary-purple">River Stage (ft)</h3>
-                              <div className="h-64 flex items-center justify-center">
-                                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-purple"></div>
-                              </div>
-                            </div>
-                            <div className="bg-supp-bright-cream p-4 rounded-lg">
-                              <h3 className="text-lg font-semibold mb-3 text-primary-purple">Discharge (cfs)</h3>
-                              <div className="h-64 flex items-center justify-center">
-                                <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-primary-purple"></div>
-                              </div>
-                            </div>
-                          </div>
-                        ) : (
-                          <div className="space-y-6">
-                            {/* Interactive Stage Chart */}
-                            <div className="bg-supp-bright-cream p-6 rounded-lg">
-                              <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-lg font-semibold text-primary-purple">River Stage (ft)</h3>
-                                <div className="text-sm text-secondary-gray">
-                                  {timeSeriesData.stage.length > 0 && (
-                                    <span>Latest: {formatValue(timeSeriesData.stage[timeSeriesData.stage.length - 1].value, 'stage')}</span>
-                                  )}
-                                </div>
-                              </div>
-                              <div className="h-96 relative bg-white rounded border border-secondary-gray">
-                                {timeSeriesData.stage.length > 0 ? (
-                                  <svg 
-                                    className="w-full h-full" 
-                                    viewBox="0 0 600 400"
-                                    onMouseLeave={() => setHoveredPoint(null)}
-                                  >
-                                    {/* Background grid */}
-                                    <defs>
-                                      <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-                                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f3f4f6" strokeWidth="1"/>
-                                      </pattern>
-                                    </defs>
-                                    <rect width="100%" height="100%" fill="url(#grid)" />
-                                    
-                                    {/* Chart area */}
-                                    <rect x="60" y="20" width="520" height="360" fill="none" stroke="#e5e7eb" strokeWidth="1" />
-                                    
-                                    {/* Calculate dimensions */}
-                                    {(() => {
-                                      const dimensions = getChartDimensions(timeSeriesData.stage);
-                                      const chartWidth = 520;
-                                      const chartHeight = 360;
-                                      
-                                      return (
-                                        <>
-                                          {/* Y-axis labels */}
-                                          {[0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((value) => {
-                                            const y = 380 - ((value - dimensions.min) / dimensions.range) * chartHeight;
-                                            return (
-                                              <g key={value}>
-                                                <line x1="60" y1={y} x2="580" y2={y} stroke="#e5e7eb" strokeWidth="1" />
-                                                <text x="55" y={y + 4} textAnchor="end" fontSize="10" fill="#6b7280">
-                                                  {value.toFixed(1)}
-                                                </text>
-                                              </g>
-                                            );
-                                          })}
-                                          
-                                          {/* X-axis time labels */}
-                                          {timeSeriesData.stage.map((point, index) => {
-                                            if (index % Math.ceil(timeSeriesData.stage.length / 6) === 0) {
-                                              const x = 60 + (index / (timeSeriesData.stage.length - 1)) * chartWidth;
-                                              return (
-                                                <text key={index} x={x} y="395" textAnchor="middle" fontSize="10" fill="#6b7280">
-                                                  {formatDateTime(point.dateTime)}
-                                                </text>
-                                              );
-                                            }
-                                            return null;
-                                          })}
-                                          
-                                          {/* Stage data line */}
-                                          <polyline
-                                            fill="none"
-                                            stroke="#39275b"
-                                            strokeWidth="2"
-                                            points={timeSeriesData.stage.map((point, index) => {
-                                              const pos = getPointPosition(index, timeSeriesData.stage.length, point.value, dimensions, chartHeight);
-                                              return `${60 + pos.x},${380 - pos.y}`;
-                                            }).join(' ')}
-                                          />
-                                          
-                                          {/* Interactive data points */}
-                                          {timeSeriesData.stage.map((point, index) => {
-                                            const pos = getPointPosition(index, timeSeriesData.stage.length, point.value, dimensions, chartHeight);
-                                            const x = 60 + pos.x;
-                                            const y = 380 - pos.y;
-                                            
-                                            return (
-                                              <g key={index}>
-                                                <circle
-                                                  cx={x}
-                                                  cy={y}
-                                                  r="4"
-                                                  fill="#39275b"
-                                                  opacity="0.8"
-                                                  onMouseEnter={(e) => {
-                                                    const rect = e.currentTarget.getBoundingClientRect();
-                                                    setHoveredPoint({
-                                                      x: rect.left + rect.width / 2,
-                                                      y: rect.top - 10,
-                                                      data: point,
-                                                      type: 'stage'
-                                                    });
-                                                  }}
-                                                  onMouseLeave={() => setHoveredPoint(null)}
-                                                />
-                                                {/* Hover indicator line */}
-                                                {hoveredPoint && hoveredPoint.data === point && (
-                                                  <line
-                                                    x1={x}
-                                                    y1="20"
-                                                    x2={x}
-                                                    y2="380"
-                                                    stroke="#39275b"
-                                                    strokeWidth="1"
-                                                    strokeDasharray="3,3"
-                                                  />
-                                                )}
-                                              </g>
-                                            );
-                                          })}
-                                        </>
-                                      );
-                                    })()}
-                                  </svg>
-                                ) : (
-                                  <div className="w-full h-full flex items-center justify-center text-secondary-gray">
-                                    No stage data available
-                                  </div>
-                                )}
-                                
-                                {/* Tooltip */}
-                                {hoveredPoint && hoveredPoint.type === 'stage' && (
-                                  <div 
-                                    className="absolute bg-primary-purple text-secondary-white p-3 rounded shadow-lg text-sm z-10"
-                                    style={{
-                                      left: hoveredPoint.x - 100,
-                                      top: hoveredPoint.y - 60,
-                                      pointerEvents: 'none'
-                                    }}
-                                  >
-                                    <div className="font-semibold">Stage: {formatValue(hoveredPoint.data.value, 'stage')}</div>
-                                    <div className="text-secondary-gold">{formatDateTime(hoveredPoint.data.dateTime)}</div>
-                                    {hoveredPoint.data.qualifiers && hoveredPoint.data.qualifiers.length > 0 && (
-                                      <div className="text-xs mt-1">Qualifiers: {hoveredPoint.data.qualifiers.join(', ')}</div>
-                                    )}
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-
-                            {/* Interactive Discharge Chart */}
-                            <div className="bg-supp-bright-cream p-6 rounded-lg">
-                              <div className="flex items-center justify-between mb-4">
-                                <h3 className="text-lg font-semibold text-primary-purple">Discharge (cfs)</h3>
-                                <div className="text-sm text-secondary-gray">
-                                  {timeSeriesData.discharge.length > 0 && (
-                                    <span>Latest: {formatValue(timeSeriesData.discharge[timeSeriesData.discharge.length - 1].value, 'discharge')}</span>
-                                  )}
-                                </div>
-                              </div>
-                              <div className="h-96 relative bg-white rounded border border-secondary-gray">
-                                {timeSeriesData.discharge.length > 0 ? (
-                                  <svg 
-                                    className="w-full h-full" 
-                                    viewBox="0 0 600 400"
-                                    onMouseLeave={() => setHoveredPoint(null)}
-                                  >
-                                    {/* Background grid */}
-                                    <defs>
-                                      <pattern id="grid2" width="40" height="40" patternUnits="userSpaceOnUse">
-                                        <path d="M 40 0 L 0 0 0 40" fill="none" stroke="#f3f4f6" strokeWidth="1"/>
-                                      </pattern>
-                                    </defs>
-                                    <rect width="100%" height="100%" fill="url(#grid2)" />
-                                    
-                                    {/* Chart area */}
-                                    <rect x="60" y="20" width="520" height="360" fill="none" stroke="#e5e7eb" strokeWidth="1" />
-                                    
-                                    {/* Calculate dimensions */}
-                                    {(() => {
-                                      const dimensions = getChartDimensions(timeSeriesData.discharge);
-                                      const chartWidth = 520;
-                                      const chartHeight = 360;
-                                      
-                                      return (
-                                        <>
-                                          {/* Y-axis labels */}
-                                          {(() => {
-                                            const maxValue = Math.max(...timeSeriesData.discharge.map(d => d.value));
-                                            const step = maxValue > 10000 ? 2000 : maxValue > 5000 ? 1000 : 500;
-                                            const steps = Math.ceil(maxValue / step);
-                                            return Array.from({length: steps + 1}, (_, i) => {
-                                              const value = i * step;
-                                              const y = 380 - ((value - dimensions.min) / dimensions.range) * chartHeight;
-                                              return (
-                                                <g key={value}>
-                                                  <line x1="60" y1={y} x2="580" y2={y} stroke="#e5e7eb" strokeWidth="1" />
-                                                  <text x="55" y={y + 4} textAnchor="end" fontSize="10" fill="#6b7280">
-                                                    {value >= 1000 ? `${(value / 1000).toFixed(0)}k` : value.toString()}
-                                                  </text>
-                                                </g>
-                                              );
-                                            });
-                                          })()}
-                                          
-                                          {/* X-axis time labels */}
-                                          {timeSeriesData.discharge.map((point, index) => {
-                                            if (index % Math.ceil(timeSeriesData.discharge.length / 6) === 0) {
-                                              const x = 60 + (index / (timeSeriesData.discharge.length - 1)) * chartWidth;
-                                              return (
-                                                <text key={index} x={x} y="395" textAnchor="middle" fontSize="10" fill="#6b7280">
-                                                  {formatDateTime(point.dateTime)}
-                                                </text>
-                                              );
-                                            }
-                                            return null;
-                                          })}
-                                          
-                                          {/* Discharge data line */}
-                                          <polyline
-                                            fill="none"
-                                            stroke="#c75b12"
-                                            strokeWidth="2"
-                                            points={timeSeriesData.discharge.map((point, index) => {
-                                              const pos = getPointPosition(index, timeSeriesData.discharge.length, point.value, dimensions, chartHeight);
-                                              return `${60 + pos.x},${380 - pos.y}`;
-                                            }).join(' ')}
-                                          />
-                                          
-                                          {/* Interactive data points */}
-                                          {timeSeriesData.discharge.map((point, index) => {
-                                            const pos = getPointPosition(index, timeSeriesData.discharge.length, point.value, dimensions, chartHeight);
-                                            const x = 60 + pos.x;
-                                            const y = 380 - pos.y;
-                                            
-                                            return (
-                                              <g key={index}>
-                                                <circle
-                                                  cx={x}
-                                                  cy={y}
-                                                  r="4"
-                                                  fill="#c75b12"
-                                                  opacity="0.8"
-                                                  onMouseEnter={(e) => {
-                                                    const rect = e.currentTarget.getBoundingClientRect();
-                                                    setHoveredPoint({
-                                                      x: rect.left + rect.width / 2,
-                                                      y: rect.top - 10,
-                                                      data: point,
-                                                      type: 'discharge'
-                                                    });
-                                                  }}
-                                                  onMouseLeave={() => setHoveredPoint(null)}
-                                                />
-                                                {/* Hover indicator line */}
-                                                {hoveredPoint && hoveredPoint.data === point && (
-                                                  <line
-                                                    x1={x}
-                                                    y1="20"
-                                                    x2={x}
-                                                    y2="380"
-                                                    stroke="#c75b12"
-                                                    strokeWidth="1"
-                                                    strokeDasharray="3,3"
-                                                  />
-                                                )}
-                                              </g>
-                                            );
-                                          })}
-                                        </>
-                                      );
-                                    })()}
-                                  </svg>
-                                ) : (
-                                  <div className="w-full h-full flex items-center justify-center text-secondary-gray">
-                                    No discharge data available
-                                  </div>
-                                )}
-                                
-                                {/* Tooltip */}
-                                {hoveredPoint && hoveredPoint.type === 'discharge' && (
-                                  <div 
-                                    className="absolute bg-primary-purple text-secondary-white p-3 rounded shadow-lg text-sm z-10"
-                                    style={{
-                                      left: hoveredPoint.x - 100,
-                                      top: hoveredPoint.y - 60,
-                                      pointerEvents: 'none'
-                                    }}
-                                  >
-                                    <div className="font-semibold">Discharge: {formatValue(hoveredPoint.data.value, 'discharge')}</div>
-                                    <div className="text-secondary-gold">{formatDateTime(hoveredPoint.data.dateTime)}</div>
-                                    {hoveredPoint.data.qualifiers && hoveredPoint.data.qualifiers.length > 0 && (
-                                      <div className="text-xs mt-1">Qualifiers: {hoveredPoint.data.qualifiers.join(', ')}</div>
-                                    )}
-                                  </div>
-                                )}
-                              </div>
-                            </div>
-                          </div>
-                        )}
-
-                        <div className="mt-4 text-xs text-secondary-gray">
-                          <p>Data source: USGS Water Services API</p>
-                          <p>Site ID: {riverData.usgsId} • Last updated: {new Date().toLocaleDateString()}</p>
                         </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {activeSidebarTab === "floods" && (
-                    <div className="space-y-6">
-                      <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
-                        <h2 className="text-xl font-semibold mb-4 text-primary-purple">Historical Flood Events</h2>
-                        <div className="space-y-4">
-                          {floodEvents.map((event, index) => (
-                            <div key={index} className="flex items-center justify-between p-4 bg-background-lightpurple rounded-lg border-l-4 border-primary-purple">
-                              <div>
-                                <div className="font-semibold text-primary-purple">{event.date}</div>
-                                <div className="text-sm text-secondary-gray">
-                                  Stage: {event.stage} ft • Discharge: {event.discharge.toLocaleString()} cfs
-                                </div>
-                              </div>
-                              <span className={`px-3 py-1 rounded-full text-xs font-semibold ${
-                                event.severity === 'major' ? 'bg-supp-bright-brick text-secondary-white' :
-                                event.severity === 'moderate' ? 'bg-supp-bright-gold text-secondary-white' :
-                                'bg-supp-bright-green text-secondary-white'
-                              }`}>
-                                {event.severity.toUpperCase()}
-                              </span>
-                            </div>
-                          ))}
-                        </div>
-                      </div>
-                    </div>
-                  )}
-
-                  {activeSidebarTab === "analysis" && (
-                    <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
-                      <h2 className="text-xl font-semibold mb-4 text-primary-purple">Data Analysis</h2>
-                      <div className="bg-supp-bright-cream p-8 rounded-lg text-center">
-                        <BarChart3 className="h-12 w-12 text-primary-purple mx-auto mb-4" />
-                        <p className="text-primary-purple">Advanced analysis tools coming soon</p>
-                      </div>
-                    </div>
-                  )}
+                      </button>
+                    ))}
+                  </nav>
                 </div>
               </div>
-            </div>
-          )}
 
-          {/* Other main tabs content */}
-          {activeTab === "projections" && (
-            <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-4 text-primary-purple">Future Risk Projections</h2>
-              <div className="bg-supp-bright-cream p-8 rounded-lg text-center">
-                <TrendingUp className="h-12 w-12 text-primary-purple mx-auto mb-4" />
-                <p className="text-primary-purple">Climate change impact projections coming soon</p>
+              {/* Content Area */}
+              <div className="flex-1 pl-8">
+                {/* Time Series Tab */}
+                {activeSidebarTab === "timeseries" && (
+                  <div className="space-y-6">
+                    {dataError && (
+                      <div className="bg-supp-bright-brick bg-opacity-10 border border-supp-bright-brick text-supp-bright-brick p-3 rounded-lg">
+                        <p className="text-sm">{dataError}</p>
+                      </div>
+                    )}
+
+                    <ProfessionalTimeSeriesChart
+                      data={timeSeriesData.stage}
+                      title="River Stage"
+                      type="stage"
+                      color="#39275b"
+                      isLoading={dataLoading}
+                    />
+
+                    <ProfessionalTimeSeriesChart
+                      data={timeSeriesData.discharge}
+                      title="Discharge"
+                      type="discharge"
+                      color="#c75b12"
+                      isLoading={dataLoading}
+                    />
+
+                    <div className="bg-secondary-white p-4 rounded-lg border border-secondary-gray">
+                      <div className="text-xs text-secondary-gray space-y-1">
+                        <p><strong>Data source:</strong> USGS Water Services API</p>
+                        <p><strong>Site ID:</strong> {riverData.usgsId}</p>
+                        <p><strong>Last updated:</strong> {new Date().toLocaleDateString()}</p>
+                        {floodThresholds && (
+                          <p><strong>Flood stages:</strong> Minor: {floodThresholds.minor}ft, Moderate: {floodThresholds.moderate}ft, Major: {floodThresholds.major}ft</p>
+                        )}
+                      </div>
+                    </div>
+                  </div>
+                )}
+
+                {/* Flood Events Tab */}
+                {activeSidebarTab === "floods" && (
+                  <FloodEventsList
+                    floodEvents={getFilteredFloodEvents()}
+                    isLoading={floodDataLoading}
+                  />
+                )}
+
+                {/* Analysis Tab */}
+                {activeSidebarTab === "analysis" && (
+                  <FloodAnalysisChart
+                    floodEvents={getFilteredFloodEvents()}
+                    isLoading={floodDataLoading}
+                  />
+                )}
               </div>
             </div>
-          )}
+          </div>
+        )}
 
-          {activeTab === "learn" && (
-            <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-4 text-primary-purple">Learn More</h2>
-              <div className="bg-supp-bright-cream p-8 rounded-lg text-center">
-                <Info className="h-12 w-12 text-primary-purple mx-auto mb-4" />
-                <p className="text-primary-purple">Educational resources and methodology information</p>
-              </div>
+        {/* Future Risk Projections Tab */}
+        {activeTab === "projections" && (
+          <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
+            <h2 className="text-xl font-semibold mb-4 text-primary-purple">Future Risk Projections</h2>
+            <div className="bg-supp-bright-cream p-8 rounded-lg text-center">
+              <TrendingUp className="h-12 w-12 text-primary-purple mx-auto mb-4" />
+              <p className="text-primary-purple">Climate change impact projections coming soon</p>
             </div>
-          )}
+          </div>
+        )}
 
-          {activeTab === "data" && (
-            <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
-              <h2 className="text-xl font-semibold mb-4 text-primary-purple">Download Data</h2>
-              <div className="bg-supp-bright-cream p-8 rounded-lg text-center">
-                <Download className="h-12 w-12 text-primary-purple mx-auto mb-4" />
-                <p className="text-primary-purple">Data export and download options</p>
-              </div>
+        {/* Learn More Tab */}
+        {activeTab === "learn" && (
+          <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
+            <h2 className="text-xl font-semibold mb-4 text-primary-purple">Learn More</h2>
+            <div className="bg-supp-bright-cream p-8 rounded-lg text-center">
+              <Info className="h-12 w-12 text-primary-purple mx-auto mb-4" />
+              <p className="text-primary-purple">Educational resources and methodology information</p>
             </div>
-          )}
-        </div>
+          </div>
+        )}
+
+        {/* Download Data Tab */}
+        {activeTab === "data" && (
+          <div className="bg-secondary-white shadow-sm p-6 rounded-lg">
+            <h2 className="text-xl font-semibold mb-4 text-primary-purple">Download Data</h2>
+            <div className="bg-supp-bright-cream p-8 rounded-lg text-center">
+              <Download className="h-12 w-12 text-primary-purple mx-auto mb-4" />
+              <p className="text-primary-purple">Data export and download options</p>
+            </div>
+          </div>
+        )}
       </div>
+    </div>
   );
-} 
+}

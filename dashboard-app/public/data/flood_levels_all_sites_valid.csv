@@ -1,0 +1,186 @@
+site_code,usgsId,siteName,state,latitude,longitude,major_stage,mod_stage,minor_stage,action_stage,hist_major,hist_mod,hist_minor,action_trig,total_historic_crests,has_usgs_id,valid
+12010000,12010000,Naselle River near Naselle,Washington,46.3739937,-123.743482,17.0,16.0,15.0,14.0,7,13,22,31,32,True,yes
+12013500,12013500,Willapa River at Willapa,Washington,46.651111111111,-123.65166666667,24.0,22.0,21.0,20.0,7,20,33,40,61,True,yes
+12020000,12020000,Chehalis River near Doty,Washington,46.6173236,-123.277644,324.5,323.5,318.0,315.5,1,1,7,7,33,True,yes
+12020525,12020525,Elk Creek (WA) near Doty,Washington,46.634722222222,-123.29555555556,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12020800,12020800,South Fork Chehalis Rver near Wildwood,Washington,46.44482815,-123.0837376,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12021800,12021800,Chehalis River near Adna,Washington,46.6258333333333,-123.100555555556,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12024000,12024000,South Fork Newaukum River near Onalaska,Washington,46.575833333333,-122.68388888889,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12024400,12024400,North Fork Newaukum River near Forest,Washington,46.66732635,-122.7701209,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12025000,12025000,Newaukum River near Chehalis,Washington,46.620277777778,-122.94388888889,205.5,204.5,202.5,200.5,1,5,11,11,50,True,yes
+12025100,12025100,Chehalis River at WWTP at Chehalis,Washington,46.6611111111111,-122.982777777778,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12025700,12025700,Skookumchuck River near Vail,Washington,46.772778,-122.592781,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12026150,12026150,Skookumchuck River Below Bloody Run,Washington,46.790277777778,-122.73416666667,-9999.0,-9999.0,-9999.0,-9999.0,24,24,24,24,24,True,no_datum
+12026400,12026400,Skookumchuck River near Bucoda,Washington,46.7720459,-122.924298,215.0,213.0,211.5,209.5,2,5,7,7,75,True,yes
+12027500,12027500,Chehalis River near Grand Mound,Washington,46.7759343,-123.0356919,144.0,142.5,141.0,138.5,2,6,9,10,179,True,yes
+12028060,12028060,Chehalis River at Rochester,Washington,46.806944444444,-123.11888888,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12031000,12031000,Chehalis River at Porter,Washington,46.93926375,-123.3143194,52.0,50.0,48.0,45.5,2,2,9,10,175,True,yes
+12035000,12035000,Satsop River near Satsop,Washington,47.000833333333,-123.49361111111,42.0,40.0,38.0,36.0,1,4,12,24,128,True,yes
+12035100,12035100,Chehalis River at Montesano,Washington,46.9625,-123.603333333333,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12037400,12037400,Wynoochee River near Montesano,Washington,47.011666666667,-123.65416666667,44.5,43.5,42.5,39.0,1,1,1,1,33,True,yes
+12039005,12039005,Humptulips River below Blo Hwy 101 NR Humptulips,Washington,47.2316666666667,-123.972777777778,-9999.0,-9999.0,-9999.0,-9999.0,16,16,16,16,16,True,no_datum
+12039500,12039500,Quinault River at Quinault Lake,Washington,47.457777777778,-123.88805555556,-9999.0,-9999.0,-9999.0,-9999.0,44,44,44,44,44,True,no_datum
+12040500,12040500,Queets R near Clearwater,Washington,47.538055555556,-124.31444444444,-9999.0,-9999.0,-9999.0,-9999.0,38,38,38,38,38,True,no_datum
+12041200,12041200,Hoh River near Forks,Washington,47.806944444444,-124.24972222222,-9999.0,-9999.0,-9999.0,-9999.0,61,61,61,61,61,True,no_datum
+12042800,12042800,Bogachiel River near Forks,Washington,47.8941666666667,-124.356944444444,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12043000,12043000,Calawah River near Forks,Washington,47.96007697,-124.3929872,-9999.0,-9999.0,-9999.0,14.6,85,85,85,60,85,True,yes
+12043015,12043015,Bogachiel River near La Push,Washington,47.903055555556,-124.54472222222,41.0,-9999.0,37.0,35.0,6,48,33,48,48,True,yes
+12045500,12045500,Elwha River at Elwha R,Washington,48.055,-123.58194444444,23.0,21.5,20.0,17.3,6,13,31,64,110,True,yes
+12048000,12048000,Dungeness River near Sequim,Washington,48.014444444444,-123.13138888889,8.0,7.5,7.0,5.9,3,11,27,80,94,True,yes
+12052210,12052210,Big Quilcene River near Quilcene,Washington,47.78453566,-122.97961,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12054000,12054000,Duckabush River near Brinnon,Washington,47.684166666667,-123.01027777778,-9999.0,-9999.0,-9999.0,5.5,0,0,0,0,0,True,yes
+12056500,12056500,North Fork Skokomish River near Hoodsport,Washington,47.5144444444444,-123.328611111111,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12059500,12059500,North Fork Skokomish River near Potlatch,Washington,47.32981429,-123.2432128,-9999.0,-9999.0,-9999.0,-9999.0,17,17,17,17,17,True,no_datum
+12060500,12060500,South Fork Skokomish River near Union,Washington,47.340555555556,-123.27888888889,-9999.0,-9999.0,-9999.0,-9999.0,73,73,73,73,73,True,no_datum
+12061250,12061250,Vance Creek near Potlatch,Washington,47.3225,-123.286111111111,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12061500,12061500,Skokomish River near Potlatch,Washington,47.31,-123.17583333333,18.0,17.5,16.5,15.0,1,40,191,297,363,True,yes
+12079000,12079000,Deschutes River near Rainier,Washington,46.852222222222,-122.6675,15.0,13.5,11.0,9.0,4,10,47,119,124,True,yes
+12082500,12082500,Nisqually River near National,Washington,46.752777777778,-122.0825,-9999.0,-9999.0,-9999.0,-9999.0,63,63,63,63,63,True,no_datum
+12089500,12089500,Nisqually River at McKenna,Washington,46.933611111111,-122.55972222222,14.0,13.0,10.0,8.0,1,2,21,25,29,True,yes
+12093500,12093500,Puyallup River near Orting,Washington,47.039444444444,-122.20666666667,-9999.0,-9999.0,-9999.0,-9999.0,148,148,148,148,148,True,no_datum
+12094000,12094000,Carbon River near Fairfax,Washington,47.028055555556,-122.03138888889,15.0,14.5,13.5,11.6,5,9,14,19,33,True,yes
+12095000,12095000,South Prairie Creek at South Prairie,Washington,47.139722222222,-122.09138888889,-9999.0,-9999.0,-9999.0,-9999.0,51,51,51,51,51,True,no_datum
+12097850,12097850,White River below Clearwater River,Washington,47.146944444444,-121.85861111111,-9999.0,-9999.0,-9999.0,-9999.0,6,6,6,6,6,True,no_datum
+12098500,12098500,White River below Mud Mountain Dam,Washington,47.151388888889,-121.94861111111,-9999.0,-9999.0,-9999.0,-9999.0,59,59,59,59,59,True,no_datum
+12099200,12099200,White River above Boise Ck,Washington,47.173888888889,-122.00805555556,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12100490,12100490,White River at R St. Auburn,Washington,47.27482295,-122.2078967,-9999.0,-9999.0,-9999.0,-9999.0,41,41,41,41,41,True,no_datum
+12100494,12100494,White River at Roegner Pk. nr Auburn,Washington,47.271388,-122.21888,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12100496,12100496,White River near Auburn,Washington,47.266109,-122.228615,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12100498,12100498,White River at Pacific,Washington,47.260277,-122.23722,-9999.0,-9999.0,-9999.0,-9999.0,11,11,11,11,11,True,no_datum
+12100500,12100500,White River near Sumner,Washington,47.250277,-122.2422,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12101102,12101102,White River near Dieringer,Washington,47.2355555555556,-122.23611111111,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12101500,12101500,Puyallup River at Puyallup,Washington,47.208611111111,-122.32583333333,31.0,30.0,26.2,24.0,4,4,18,26,69,True,yes
+12105800,12105800,Green River (WA) at Howard Hanson Reservoir,Washington,47.2770478,-121.7853845,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12105900,12105900,Green River (WA) below Howard Hanson Dam,Washington,47.283888888889,-121.79666666667,-9999.0,-9999.0,-9999.0,-9999.0,25,25,25,25,25,True,no_datum
+12106700,12106700,Green River (WA) at Purification Plant,Washington,47.305279,-121.849442,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12108500,12108500,Newaukum Creek near Black Diamond,Washington,47.275833333333,-122.05833333333,-9999.0,-9999.0,-9999.0,-9999.0,7,7,7,7,7,True,no_datum
+12112600,12112600,Big Soos Creek near Auburn,Washington,47.3125,-122.16416666667,-9999.0,-9999.0,-9999.0,-9999.0,6,6,6,6,6,True,no_datum
+12113000,12113000,Green River (WA) near Auburn,Washington,47.3125,-122.20277777778,-9999.0,-9999.0,-9999.0,-9999.0,81,81,81,81,81,True,no_datum
+12113344,12113344,Green River (WA) at Kent,Washington,47.423055555556,-122.2642,-9999.0,-9999.0,-9999.0,-9999.0,2,2,2,2,2,True,no_datum
+12113350,12113350,Green River (WA) at Tukwila,Washington,47.4652777777778,-122.247222222222,-9999.0,-9999.0,-9999.0,-9999.0,6,6,6,6,6,True,no_datum
+12113390,12113390,Duwamish River at Tukwila,Washington,47.4789861,-122.2587333,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12113415,12113415,Duwamish River at Duwamish,Washington,47.50050556,-122.2881417,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12115900,12115900,Cedar River (WA) at Chester Morse Lk at Cedar Falls,Washington,47.4092706,-121.7239955,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12117500,12117500,Cedar River (WA) near Landsburg,Washington,47.393888888889,-121.95333333333,7.5,6.5,5.7,3.5,12,16,21,50,64,True,yes
+12119000,12119000,Cedar River (WA) at Renton,Washington,47.482777777778,-122.20222222222,16.0,14.5,13.0,10.4,4,4,10,38,71,True,yes
+12120600,12120600,Issaquah Creek near Hobart,Washington,47.4575,-122.00388888889,-9999.0,-9999.0,-9999.0,-9999.0,44,44,44,44,44,True,no_datum
+12121600,12121600,Issaquah Creek near Issaquah,Washington,47.5525,-122.04666666667,-9999.0,-9999.0,-9999.0,-9999.0,76,76,76,76,76,True,no_datum
+12131500,12131500,South Fork Skykomish River at Skykomish,Washington,47.71104167,-121.3607333,30.0,29.0,27.5,26.0,0,1,1,2,4,True,yes
+12134500,12134500,Skykomish River near Gold Bar,Washington,47.8373546,-121.6667809,19.0,17.0,15.0,12.2,23,48,106,137,137,True,yes
+12137290,12137290,South Fork Sultan River near Sultan,Washington,47.9475,-121.625555555556,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12138160,12138160,Sultan River near Sultan,Washington,47.9075,-121.814166666667,-9999.0,-9999.0,-9999.0,-9999.0,5,5,5,5,5,True,no_datum
+12141300,12141300,Middle Fork Snoqualmie River near Tanner,Washington,47.486111111111,-121.64666666667,-9999.0,-9999.0,-9999.0,-9999.0,48,48,48,48,48,True,no_datum
+12142000,12142000,North Fork Snoqualmie River near Snoqualmie Falls,Washington,47.615,-121.71222222222,-9999.0,-9999.0,-9999.0,-9999.0,47,47,47,47,47,True,no_datum
+12143400,12143400,South Fork Snoqualmie River near South Fork Snoqualmie R near Garcia,Washington,47.4151086,-121.5873213,-9999.0,-9999.0,-9999.0,-9999.0,55,55,55,55,55,True,no_datum
+12144500,12144500,Snoqualmie River at Snoqualmie Falls,Washington,47.5450119,-121.842336,-9999.0,-9999.0,-9999.0,-9999.0,92,92,92,92,92,True,no_datum
+12147900,12147900,South Fork Tolt above S Fk Tolt Reservoir,Washington,47.6937142,-121.689,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12148500,12148500,Tolt River near Carnation,Washington,47.695833333333,-121.82277777778,-9999.0,-9999.0,-9999.0,-9999.0,230,230,230,230,230,True,no_datum
+12149000,12149000,Snoqualmie River near Carnation,Washington,47.666111111111,-121.92416666667,58.0,56.0,54.0,50.7,34,88,153,188,214,True,yes
+12150800,12150800,Snohomish River near Monroe,Washington,47.831111111111,-122.04722222222,17.0,16.0,15.0,10.0,30,55,76,95,95,True,yes
+12155300,12155300,Pilchuck River near Snohomish,Washington,47.935,-122.07194444444,22.0,20.0,18.0,16.0,0,1,6,22,22,True,yes
+12155500,12155500,Snohomish River at Snohomish,Washington,47.9127333,-122.1064583,29.0,27.0,25.0,20.0,29,81,129,134,134,True,yes
+12161000,12161000,South Fork Stillaguamish River near Granite Falls,Washington,48.103888888889,-121.94444444444,-9999.0,-9999.0,-9999.0,12.9,149,149,149,88,149,True,yes
+12167000,12167000,North Fork Stillaguamish River near Arlington,Washington,48.261666666667,-122.04638888889,15.0,14.0,13.0,10.7,6,25,55,122,122,True,yes
+12170300,12170300,Stillaguamish River near Stanwood,Washington,48.2114,-122.3361,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12175000,12175000,Skagit River  Ross Reservoir,Washington,48.7327777777778,-121.067222222222,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12175500,12175500,Thunder Creek near Newhalem,Washington,48.672777777778,-121.07166666667,-9999.0,-9999.0,-9999.0,-9999.0,46,46,46,46,46,True,no_datum
+12177510,12177510,Stetattle Creek at Diablo,Washington,48.7171333,-121.1499389,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12178000,12178000,Skagit River at Newhalem,Washington,48.671944,-121.246666,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12181000,12181000,Skagit River at Marblemount,Washington,48.533888888889,-121.42861111111,-9999.0,-9999.0,-9999.0,-9999.0,17,17,17,17,17,True,no_datum
+12186000,12186000,Sauk River above White Chuck R,Washington,48.168888,-121.469444,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12189500,12189500,Sauk River near Sauk,Washington,48.4247222222222,-121.567222222222,-9999.0,-9999.0,-9999.0,-9999.0,91,91,91,91,91,True,no_datum
+12191600,12191600,Baker River  Baker Lk,Washington,48.6494444444444,-121.689444444444,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12193400,12193400,Baker River at Concrete,Washington,48.540555555556,-121.74222222222,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12194000,12194000,Skagit River near Concrete,Washington,48.524444444444,-121.76972222222,32.5,30.0,28.0,24.5,36,64,90,105,105,True,yes
+12200500,12200500,Skagit River near Mt Vernon,Washington,48.445,-122.33416666667,32.0,30.0,28.0,23.5,15,27,61,91,91,True,yes
+12201500,12201500,Samish River near Burlington,Washington,48.54594127,-122.3382169,-9999.0,-9999.0,-9999.0,-9999.0,41,41,41,41,41,True,no_datum
+12205000,12205000,North Fork Nooksack River near Glacier,Washington,48.90595739,-121.8443104,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12208000,12208000,Middle Fork Nooksack River near Deming,Washington,48.779444444444,-122.10527777778,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12210000,12210000,South Fork Nooksack River near Saxon Bridge,Washington,48.67761256,-122.1665454,9.5,8.5,8.0,6.9,2,5,12,21,21,True,yes
+12210700,12210700,Nooksack River at North Cedarvillle,Washington,48.84178209,-122.2943258,150.0,148.0,146.5,144.8,1,9,20,41,41,True,yes
+12211190,12211190,Nooksack River Overflow at Emerson Rd,Wyoming,48.9133333333333,-122.339166666667,-9999.0,-9999.0,-9999.0,89.1,1,1,1,1,1,True,yes
+12211195,12211195,Nooksack River Overflow At SR544 Everson,Washington,48.92012,-122.33405,-9999.0,-9999.0,4.0,3.55,6,6,5,6,6,True,yes
+12211200,12211200,Nooksack River at Everson,Washington,48.9180555555556,-122.346666666667,-9999.0,-9999.0,-9999.0,83.0,8,8,8,8,8,True,yes
+12211500,12211500,Nooksack River near Lynden,Washington,48.9203,-122.4857,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12213100,12213100,Nooksack River at Ferndale,Washington,48.84483249,-122.5893389,23.0,20.5,18.0,15.0,17,36,61,117,119,True,yes
+12214500,12214500,Sumas River near Sumas,Washington,48.977777777778,-122.25416666667,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12395950,12395950,Pend Oreille River at Cusick,Washington,48.33601,-117.293,-9999.0,-9999.0,-9999.0,-9999.0,11,11,11,11,11,True,no_datum
+12396455,12396455,Pend Oreille River at Ione,Washington,48.74103,-117.4133,-9999.0,-9999.0,-9999.0,-9999.0,10,10,10,10,10,True,no_datum
+12396500,12396500,Pend Oreille River below Box Canyon Dam,Washington,48.7811111111111,-117.4163,-9999.0,-9999.0,-9999.0,-9999.0,19,19,19,19,19,True,no_datum
+12401500,12401500,Kettle River near Ferry,Washington,48.9813,-118.7664,20.5,19.5,18.5,17.5,5,12,23,26,42,True,yes
+12404500,12404500,Kettle River near Laurier,Washington,48.98434,-118.2164,-9999.0,-9999.0,-9999.0,-9999.0,58,58,58,58,58,True,no_datum
+12409000,12409000,Colville River at Kettle Falls,Washington,48.59435,-118.06249,-9999.0,-9999.0,-9999.0,-9999.0,67,67,67,67,67,True,no_datum
+12422000,12422000,Spokane River below Green St at Spokane,Washington,47.67906,-117.3647,-9999.0,-9999.0,-9999.0,-9999.0,8,8,8,8,8,True,no_datum
+12422500,12422500,Spokane River at Spokane,Washington,47.65933,-117.4491,30.0,29.0,27.0,26.0,0,2,18,22,60,True,yes
+12422990,12422990,Hangman/Latah Creek near Tekoa,Washington,47.20268,-117.0407,-9999.0,-9999.0,-9999.0,-9999.0,18,18,18,18,18,True,no_datum
+12424000,12424000,Hangman/Latah Creek at Spokane,Washington,47.65267,-117.44966,15.0,13.0,11.0,10.0,0,4,16,23,75,True,yes
+12431000,12431000,Little Spokane River at Dartford,Washington,47.78461,-117.40438,8.5,7.5,6.5,5.5,0,1,7,25,72,True,yes
+12433200,12433200,Chamokane Creek below Falls near Long Lake,Washington,47.8632201,-117.858294,-9999.0,-9999.0,-9999.0,-9999.0,32,32,32,32,32,True,no_datum
+12434590,12434590,Sanpoil River above Jack Creek,Washington,48.0843,-118.6914,-9999.0,-9999.0,-9999.0,6.5,19,19,19,5,19,True,yes
+12436000,12436000,Columbia River above Grand Coulee Dam,Washington,47.955555555556,-118.98388888889,-9999.0,-9999.0,-9999.0,-9999.0,9,9,9,9,9,True,no_datum
+12438905,12438905,Ninemile Creek near Oroville,Washington,48.97037,-119.41857,-9999.0,-9999.0,-9999.0,-9999.0,8,8,8,8,8,True,no_datum
+12439000,12439000,Osoyoos Lake at Oroville,Washington,48.95655,-119.4395,-9999.0,-9999.0,-9999.0,-9999.0,15,15,15,15,15,True,no_datum
+12439500,12439500,Okanogan River at Oroville,Washington,48.93072,-119.4203,-9999.0,-9999.0,-9999.0,-9999.0,26,26,26,26,26,True,no_datum
+12442500,12442500,Similkameen River near Nighthawk,Washington,48.9846,-119.6184,16.0,15.0,14.0,13.0,2,6,14,25,97,True,yes
+12444550,12444550,Bonaparte Creek at Tonasket,Washington,48.7012,-119.4428,-9999.0,-9999.0,-9999.0,-9999.0,9,9,9,9,9,True,no_datum
+12445000,12445000,Okanogan River near Tonasket,Washington,48.6324,-119.4617,18.0,17.0,15.0,14.0,8,14,38,52,97,True,yes
+12445900,12445900,Omak Creek near Omak,Washington,48.3671,-119.445,-9999.0,-9999.0,-9999.0,-9999.0,16,16,16,16,16,True,no_datum
+12446150,12446150,North Fork Salmon Creek near Conconully,Washington,48.5963,-119.77396,-9999.0,-9999.0,-9999.0,-9999.0,12,12,12,12,12,True,no_datum
+12446400,12446400,West Fork Salmon Creek near Conconully,Washington,48.54098,-119.7642,-9999.0,-9999.0,-9999.0,-9999.0,11,11,11,11,11,True,no_datum
+12446995,12446995,Salmon Creek near Okanogan,Washington,48.40515,-119.6217,-9999.0,-9999.0,-9999.0,-9999.0,12,12,12,12,12,True,no_datum
+12447200,12447200,Okanogan River at Malott,Washington,48.28126,-119.7045,-9999.0,-9999.0,-9999.0,-9999.0,31,31,31,31,31,True,no_datum
+12447383,12447383,Methow River above Goat Creek near Mazama,Washington,48.57425,-120.3859,-9999.0,-9999.0,-9999.0,-9999.0,34,34,34,34,34,True,no_datum
+12447390,12447390,Andrews Creek near Mazama,Washington,48.8229,-120.1459,-9999.0,-9999.0,-9999.0,-9999.0,32,32,32,32,32,True,no_datum
+12448000,12448000,Chewuch River at Winthrop,Washington,48.47709,-120.1865,-9999.0,-9999.0,-9999.0,-9999.0,34,34,34,34,34,True,no_datum
+12448500,12448500,Methow River at Winthrop,Washington,48.47347,-120.1773,-9999.0,-9999.0,-9999.0,-9999.0,36,36,36,36,36,True,no_datum
+12448998,12448998,Twisp River near Twisp,Washington,48.3699,-120.1487,-9999.0,-9999.0,-9999.0,-9999.0,30,30,30,30,30,True,no_datum
+12449950,12449950,Methow River near Pateros,Washington,48.0774,-119.9851,12.0,11.0,10.0,9.0,1,2,10,17,43,True,yes
+12451000,12451000,Stehekin River at Stehekin,Washington,48.32958,-120.69176,-9999.0,-9999.0,24.0,22.0,106,106,81,106,106,True,yes
+12451200,12451200,Lake Chelan at Purple Point near Stehekin,Washington,48.30597,-120.6543,-9999.0,-9999.0,-9999.0,-9999.0,4,4,4,4,4,True,no_datum
+12452000,12452000,Lake Chelan at Chelan,Washington,47.83624,-120.06146,-9999.0,-9999.0,-9999.0,-9999.0,10,10,10,10,10,True,no_datum
+12452800,12452800,Entiat River near Ardenvoir,Washington,47.8186111111111,-120.4231,9.0,8.0,7.5,6.0,0,2,5,39,71,True,yes
+12452890,12452890,Mad River at Ardenvoir,Washington,47.73679,-120.3687,-9999.0,-9999.0,-9999.0,-9999.0,23,23,23,23,23,True,no_datum
+12452990,12452990,Entiat River near Entiat,Washington,47.66319,-120.25063,-9999.0,-9999.0,-9999.0,-9999.0,23,23,23,23,23,True,no_datum
+12456500,12456500,Chiwawa River near Plain,Washington,47.8373,-120.6623,-9999.0,-9999.0,-9999.0,-9999.0,28,28,28,28,28,True,no_datum
+12457000,12457000,Wenatchee River at Plain,Washington,47.7629,-120.6662,-9999.0,-9999.0,-9999.0,-9999.0,32,32,32,32,32,True,no_datum
+12459000,12459000,Wenatchee River at Peshastin,Washington,47.5832,-120.6195,15.0,14.0,13.0,12.0,4,5,9,20,94,True,yes
+12462500,12462500,Wenatchee River at Monitor,Washington,47.49929,-120.4245,-9999.0,-9999.0,-9999.0,-9999.0,31,31,31,31,31,True,no_datum
+12465000,12465000,Crab Creek at Irby,Washington,47.36042,-118.85,-9999.0,-9999.0,-9999.0,-9999.0,29,29,29,29,29,True,no_datum
+12467000,12467000,Crab Creek near Moses Lake,Washington,47.18931,-119.2659,-9999.0,-9999.0,-9999.0,-9999.0,27,27,27,27,27,True,no_datum
+12471000,12471000,Moses Lake at Moses Lake,Washington,47.10292,-119.3184,-9999.0,-9999.0,-9999.0,-9999.0,31,31,31,31,31,True,no_datum
+12472800,12472800,Columbia River below Priest Rapids Dam,Washington,46.62874,-119.8647,34.0,33.0,32.0,31.0,2,4,5,7,38,True,yes
+12484500,12484500,Yakima River at Umtanum,Washington,46.8626264,-120.480067,39.0,38.0,35.5,33.5,1,3,11,13,13,True,yes
+12488500,12488500,American River (WA) near Nile,Washington,46.97761606,-121.168696,-9999.0,-9999.0,-9999.0,-9999.0,1,1,1,1,1,True,no_datum
+12502500,12502500,Ahtanum Creek at Union Gap,Washington,46.53596038,-120.4733968,-9999.0,-9999.0,-9999.0,-9999.0,1,1,1,1,1,True,no_datum
+12506000,12506000,Toppenish Creek near Fort Simcoe,Washington,46.3109589,-120.788125,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+12510500,12510500,Yakima River at Kiona,Washington,46.25346748,-119.4780794,16.0,14.5,13.0,11.0,8,15,22,30,30,True,yes
+13334300,13334300,Snake River (WA) near Anatone,Washington,46.0971,-116.9776,24.0,23.0,20.0,19.0,1,2,12,18,39,True,yes
+13335050,13335050,Asotin Creek at Asotin,Washington,46.34072,-117.05599,-9999.0,-9999.0,-9999.0,-9999.0,35,35,35,35,35,True,no_datum
+13344500,13344500,Tucannon River near Starbuck,Washington,46.5054217,-118.0663393,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+13348000,13348000,South Fork Palouse River at Pullman,Washington,46.73238,-117.181,9.0,8.0,7.0,5.5,4,6,9,19,58,True,yes
+13351000,13351000,Palouse River at Hooper,Washington,46.75848,-118.14885,-9999.0,-9999.0,-9999.0,-9999.0,26,26,26,26,26,True,no_datum
+14013000,14013000,Mill Creek (WA) near Walla Walla,Washington,46.00791557,-118.1185595,-9999.0,-9999.0,-9999.0,-9999.0,3,3,3,3,3,True,no_datum
+14013700,14013700,Mill Creek at Five Mile Bridge,Washington,46.0856932,-118.2282912,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+14015000,14015000,Mill Creek (WA) at Walla Walla,Washington,46.0762483,-118.2735722,-9999.0,-9999.0,-9999.0,-9999.0,2,2,2,2,2,True,no_datum
+14018500,14018500,Walla Walla River near Touchet,Washington,46.0276341,-118.7297112,17.0,15.0,13.0,10.0,4,6,15,15,15,True,yes
+14107000,14107000,Klickitat River near Glenwood,Washington,46.2648437,-121.245075,-9999.0,-9999.0,-9999.0,-9999.0,1,1,1,1,1,True,no_datum
+14113000,14113000,Klickitat River near Pitt,Washington,45.75651098,-121.2100714,14.0,11.0,9.0,8.0,4,10,27,27,27,True,yes
+14123500,14123500,White Salmon River near Underwood,Washington,45.751944444444,-121.52666666667,-9999.0,-9999.0,-9999.0,-9999.0,32,32,32,32,32,True,no_datum
+14128500,14128500,Wind River near Carson,Washington,45.726784,-121.794799,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+14128600,14128600,Columbia River at Stevenson,Washington,45.699444444444,-121.86722222222,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+14216000,14216000,Lewis River above Muddy River near Cougar 15E,Washington,46.060555555556,-121.98333333333,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+14216500,14216500,Muddy River below Clear Creek,Oregon,46.0758333333333,-121.9975,-9999.0,-9999.0,-9999.0,-9999.0,32,32,32,32,32,True,no_datum
+14217599,14217599,Lewis River at Swift Reservoir,Washington,46.062777777778,-122.13111111111,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+14218480,14218480,Lewis River at Yale Reservoir,Washington,46.032777777778,-122.31166666667,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+14219000,14219000,Canyon Creek near Amboy,Washington,45.940277777778,-122.31694444444,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+14220500,14220500,Lewis River at Ariel,Washington,45.9519444444444,-122.562777777778,-9999.0,-9999.0,-9999.0,-9999.0,34,34,34,34,34,True,no_datum
+14222500,14222500,East Fork Lewis River near Heisson,Oregon,45.836666666667,-122.46611111111,-9999.0,-9999.0,20.0,19.0,68,68,15,31,68,True,yes
+14226500,14226500,Cowlitz River at Packwood,Washington,46.613055555556,-121.67805555556,12.0,11.0,10.5,8.2,8,19,34,60,66,True,yes
+14231000,14231000,Cowlitz River at Randle,Washington,46.5319,-121.9569,22.0,20.0,18.0,13.2,9,17,32,40,43,True,yes
+14231900,14231900,Cispus River near Randle,Washington,46.444166666667,-121.83888888889,-9999.0,-9999.0,-9999.0,-9999.0,25,25,25,25,25,True,no_datum
+14233500,14233500,Cowlitz River near Kosmos,Washington,46.466388888889,-122.10777777778,-9999.0,-9999.0,-9999.0,-9999.0,0,0,0,0,0,True,no_datum
+14236200,14236200,Tilton River near Cinebar,Washington,46.595555555556,-122.45833333333,-9999.0,-9999.0,-9999.0,-9999.0,28,28,28,28,28,True,no_datum
+14238000,14238000,Cowlitz River below Mayfield Dam,Washington,46.510555555556,-122.615,-9999.0,-9999.0,-9999.0,-9999.0,79,79,79,79,79,True,no_datum
+14240525,14240525,N Fk Toutle River below Sediment Retention Structure near Toutle,Washington,46.371944444444,-122.57777777778,-9999.0,-9999.0,-9999.0,-9999.0,8,8,8,8,8,True,no_datum
+14242580,14242580,Toutle River at Tower Road near Silver Lake,Washington,46.335,-122.840833,140.0,139.0,137.0,135.0,11,14,15,15,18,True,yes
+14243000,14243000,Cowlitz River at Castle Rock,Washington,46.274444444444,-122.9125,57.0,54.0,48.0,46.0,0,3,14,20,20,True,yes
