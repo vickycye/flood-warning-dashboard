@@ -42,11 +42,24 @@ export const loadAllMapRiverSites = async (): Promise<MapRiverSite[]> => {
         }
      
         const thresholds = await thresholdsResponse.json();
+
+        interface ThresholdSite {
+          usgsId: string | number;
+          name: string;
+          latitude: number;
+          longitude: number;
+          floodThresholds: {
+            minor: number;
+            moderate: number;
+            major: number;
+            action?: number;
+          };
+        }
         
         // Create sites directly from JSON thresholds data
         const mapSites: MapRiverSite[] = thresholds
-          .filter((site: any) => siteCodes.includes(String(site.usgsId)))
-          .map((site: any) => ({
+          .filter((site: ThresholdSite) => siteCodes.includes(String(site.usgsId)))
+          .map((site: ThresholdSite) => ({
             id: site.usgsId, 
             usgsId: site.usgsId,
             name: site.name,

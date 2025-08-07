@@ -458,7 +458,7 @@ export default function SearchPage() {
               <div className="text-center">
                 <MapPin className="h-12 w-12 text-primary-purple mx-auto mb-4" />
                 <p className="text-secondary-black mb-6">
-                  To show you the most relevant rivers, we'd like to know your approximate location.
+                  To show you the most relevant rivers, we&apos;d like to know your approximate location.
                 </p>
                 <div className="space-y-3">
                   <button
