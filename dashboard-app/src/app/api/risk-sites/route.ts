@@ -27,8 +27,19 @@ export async function GET() {
       return NextResponse.json({ error: "Invalid data from NOAA API" }, { status: 500 });
     }
 
+    interface NOAAFeature {
+      geometry: {
+        x: number;
+        y: number;
+      };
+      attributes?: {
+        objectid?: number;
+        status?: string;
+      };
+    }
+
     // ✅ Safe to map now
-    const sites = data.features.map((feature: any) => {
+    const sites = data.features.map((feature: NOAAFeature) => {
       const { lat, lng } = webMercatorToLatLng(feature.geometry.x, feature.geometry.y);
       return {
         id: feature.attributes?.objectid,
