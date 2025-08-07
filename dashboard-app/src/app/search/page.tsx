@@ -1,5 +1,5 @@
 "use client";
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, Suspense } from "react";
 import { Search, MapPin, AlertTriangle, ArrowLeft, Navigation, X } from "lucide-react";
 import { useSearchParams } from "next/navigation";
 
@@ -162,6 +162,14 @@ const fetchUSGSDataForSite = async (usgsId: string) => {
 };
 
 export default function SearchPage() {
+  return (
+    <Suspense fallback={<div>Loading search params...</div>}>
+      <SearchPageContent />
+    </Suspense>
+  );
+}
+
+function SearchPageContent() {
   const searchParams = useSearchParams();
   const query = searchParams.get('query') || '';
   
